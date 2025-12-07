@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(platex:*)",
+      "Bash(pbibtex:*)",
+      "Bash(dvipdfmx:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

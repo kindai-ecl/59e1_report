@@ -1,0 +1,77 @@
+\documentclass[10pt,twocolumn, a4j]{jsarticle}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\setlength{\oddsidemargin}{-12mm}
+\setlength{\topmargin}{-16mm}
+\setlength{\textwidth}{181mm}
+\setlength{\columnsep}{8mm}
+
+\setlength{\textheight}{248mm}
+\renewcommand{\baselinestretch}{.856}
+
+\pagestyle{empty}
+
+\makeatletter
+\def\@biblabel#1{#1)}
+\def\@cite#1{#1)}
+\makeatother
+
+\begin{document}
+
+\twocolumn[
+{\LARGE
+\begin{center}
+分散台帳技術を用いたヘッドレスECサイトにおけるトークン決済システムの実装と評価
+\end{center}
+}
+
+\vspace{-2mm}
+\begin{flushright}
+電子商取引研究室\hspace{1.5zw}呉竹 櫂人\hspace{1.5zw}
+\end{flushright}
+\vspace{3mm}
+]
+
+\renewcommand{\thesection}{\arabic{section} .}
+
+\section{序論}
+
+\subsection{背景}
+近年、Eコマース市場は急速に拡大しており、決済手段の多様化が求められている。特に、ブロックチェーン技術を基盤とした暗号資産やトークンによる決済が注目されている。一方、従来のECプラットフォーム(EC-CUBE、WooCommerceなど)は、フロントエンドとバックエンドが密結合されており、新しい決済手段の導入や柔軟なシステム拡張が困難である。
+
+\subsection{問題点}
+従来のECサイトにおける主な問題点は以下の通りである。
+\begin{itemize}
+\item モノリシックなアーキテクチャによる拡張性の低さ
+\item トークン決済などの新しい決済手段への対応の遅れ
+\item フロントエンドとバックエンドの技術選択の制約
+\item セキュリティリスクへの対応の複雑さ
+\end{itemize}
+
+\subsection{提案手法}
+本研究では、ヘッドレスコマースアーキテクチャとブロックチェーン技術を組み合わせた新しいECサイトシステムを提案する。具体的には、WebAPI化されたバックエンドと、分散台帳技術を用いたトークン決済機能を実装する。また、OWASP Top 10に基づくセキュリティチェックと対策を行う。
+
+\subsection{実験・評価内容}
+提案システムの有効性を検証するため、以下の実験・評価を行う。
+\begin{itemize}
+\item トークン決済の処理速度と成功率の測定
+\item 従来型ECサイトとの比較評価
+\item セキュリティ脆弱性診断の実施
+\end{itemize}
+
+\section{ヘッドレスコマースシステムの設計と実装}
+（今後記述予定）
+
+\section{今後の計画}
+（今後記述予定）
+
+\nocite{*}
+\bibliography{251207}
+\bibliographystyle{junsrt}
+
+\end{document}
