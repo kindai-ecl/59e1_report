@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}
+
+\bibitem{wood2014ethereum}
+Gavin Wood.
+\newblock Ethereum: A secure decentralised generalised transaction ledger.
+\newblock {\em Ethereum Project Yellow Paper}, Vol. 151, pp. 1--32, 2014.
+
+\bibitem{jpyc2023}
+{JPYC株式会社}.
+\newblock Jpyc公式ドキュメント, 2023.
+\newblock 2024年12月15日閲覧.
+
+\bibitem{escrow2020blockchain}
+Xiaohong Chen and Xiaofeng Wang.
+\newblock Decentralized escrow system based on smart contracts.
+\newblock In {\em Proceedings of the International Conference on Blockchain
+  Technology}, pp. 45--52. IEEE, 2020.
+
+\bibitem{eccube2024}
+{EC-CUBE}.
+\newblock Ec-cube 技術資料, 2024.
+\newblock 2024年12月15日閲覧.
+
+\end{thebibliography}
