@@ -1,0 +1,107 @@
+\documentclass[10pt,twocolumn, a4j]{jsarticle}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\setlength{\oddsidemargin}{-12mm}
+\setlength{\topmargin}{-16mm}
+\setlength{\textwidth}{181mm}
+\setlength{\columnsep}{8mm}
+
+\setlength{\textheight}{248mm}
+\renewcommand{\baselinestretch}{.856}
+
+\pagestyle{empty}
+
+\makeatletter
+\def\@biblabel#1{#1)}
+\def\@cite#1{#1)}
+\makeatother
+
+\begin{document}
+
+\twocolumn[
+{\LARGE
+\begin{center}
+ECサイトにおけるJPYCを用いた分散型エスクロー決済フローの設計と実装
+\end{center}
+}
+
+\vspace{-2mm}
+\begin{flushright}
+電子商取引研究室\hspace{1.5zw}呉竹 櫂人\hspace{1.5zw}
+\end{flushright}
+\vspace{3mm}
+]
+
+\renewcommand{\thesection}{\arabic{section} .}
+
+\section{序論}
+
+\subsection{背景}
+EC取引では、支払いと商品引き渡しの非同時性により、取引の信頼性確保が重要な課題となっている。従来はプラットフォーム運営者が第三者預託(エスクロー)を担うことで取引の安全性を確保してきたが、手数料の高さや利用条件、国・事業規模による制約、運営者への依存といった問題がある。
+
+近年、分散型台帳技術とスマートコントラクトの発展により、中央管理者に依存しない決済・送金構造が注目されている。特に、円と価値が連動するステーブルコインであるJPYCは、為替変動の影響を受けず、EC決済への応用が期待されている。
+
+\subsection{問題点}
+既存の暗号資産決済では、宛先アドレスや金額の手入力による誤送金が発生しやすく、またPCブラウザウォレットを前提とした方式では、マルウェアやフィッシングによる被害のリスクがある。
+
+さらに、スマートフォンにウォレットを保有する利用者が多い一方で、PCで商品を購入し、スマートフォンで安全に決済するフローは十分に整理されていない。加えて、スマートコントラクトを用いた決済におけるガス代や処理時間がEC運用に与える影響も明確に整理されていない。
+
+\subsection{提案手法}
+本研究では、JPYCを用いた分散型エスクロー決済フローを設計・実装する。PC上のEC購入画面で生成された支払い要求をQRコードとして提示し、スマートフォンのウォレットで署名・送信することで、秘密鍵をPCに露出させない安全な決済を実現する。
+
+また、スマートコントラクトを用いて資金を一時的に預託し、取引成立時に送金、期限切れ時に返金を行う分散型エスクローモデルを構築する。
+
+\subsection{実験・評価内容}
+提案方式と従来方式を以下の観点から比較評価する。
+\begin{itemize}
+\item 操作ステップ数・手入力項目数の測定
+\item 誤送金防止率・注文紐付け成功率の算出
+\item トランザクションのガス代・処理時間の計測
+\end{itemize}
+
+\section{研究内容}
+
+\subsection{分散型エスクローモデル}
+提案するエスクローは、INIT(初期状態) → FUNDED(入金済) → COMPLETED/REFUNDED(完了/返金)の状態遷移を持つ。購入者がJPYCをスマートコントラクトに預託し、取引成立時に売り手へ送金、問題発生時には返金を行う。
+
+\subsection{決済フロー設計}
+PC上のEC購入画面でQRコードを表示し、スマートフォンのウォレットで署名・送金する方式により、秘密鍵をPCに露出させない安全な決済を実現する。
+
+\subsection{従来方式との比較}
+手動送金方式、PCブラウザウォレット方式、提案方式を操作負担・安全性・コストの観点から比較する。
+
+\section{今後の計画}
+
+本研究の実施スケジュールを表1に示す。
+
+\begin{table}[h]
+\centering
+\caption{研究スケジュール}
+\begin{tabular}{|l|l|}
+\hline
+時期 & 内容 \\ \hline
+4月前半 & 要件分析・関連研究調査 \\ \hline
+4月後半 & 決済フローおよび仕様設計 \\ \hline
+5月前半 & スマートコントラクト実装 \\ \hline
+5月後半 & EC側プロトタイプ実装 \\ \hline
+6月前半 & テスト・予備実験 \\ \hline
+6月後半 & 実証実験・評価 \\ \hline
+7月 & 論文執筆・まとめ \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{必要機材}
+\begin{itemize}
+\item イーサリアム(テスト用のJPYC等を受け取るため、前期中に準備)
+\end{itemize}
+
+\nocite{*}
+\bibliography{260106}
+\bibliographystyle{junsrt}
+
+\end{document}
