@@ -1,0 +1,95 @@
+\documentclass[10pt,twocolumn, a4j]{jsarticle}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\usepackage{url}
+
+\setlength{\oddsidemargin}{-12mm}
+\setlength{\topmargin}{-16mm}
+\setlength{\textwidth}{181mm}
+\setlength{\columnsep}{8mm}
+
+\setlength{\textheight}{248mm}
+\renewcommand{\baselinestretch}{.856}
+
+\pagestyle{empty}
+
+\makeatletter
+\def\@biblabel#1{*#1)}
+\def\@cite#1{*#1)}
+\makeatother
+
+\begin{document}
+
+\twocolumn[
+{\LARGE
+\begin{center}
+ECサイトにおけるJPYCを用いた分散型エスクロー決済フローの設計と実装
+\end{center}
+}
+
+\vspace{-2mm}
+\begin{flushright}
+近畿大学 情報学部 情報学科\hspace{1.5zw}呉竹 櫂人\hspace{1.5zw}
+\end{flushright}
+\vspace{3mm}
+]
+
+\renewcommand{\thesection}{\arabic{section} .}
+
+\section{序論}
+
+ECサイトで買い物をする時、お金を払ってから商品が届くまでに時間がかかる。この間にトラブルが起きる可能性がある。今までは運営会社がお金を預かる方法が使われてきたが、手数料が高く、運営会社に頼るしかない問題がある\cite{jpyc2021}。本研究では、日本円と同じ価値を持つJPYCという暗号資産を使い、運営会社に頼らない安全な支払い方法を作ることを目的とする。PCで買い物をして、スマートフォンで安全に支払いができる仕組みを作る。
+
+\section{提案方式}
+
+\subsection{お金を預かる仕組み}
+買い手はJPYCを一時的に預ける。注文番号で取引を区別し、「最初」「預けた」「渡した」「返した」の4つの状態で管理する。商品が無事届いたら売り手にお金を渡す。期限を過ぎたら買い手にお金を返す。この仕組みで、お金を払ったのに商品が届かない時でも、ちゃんとお金が戻ってくる。
+
+\subsection{支払いの流れ}
+PCの画面に、注文番号・金額・売り手の情報が入ったQRコードを表示する。買い手はスマートフォンでQRコードを読み取り、送り先と金額を確認してから送金する。大事な秘密の情報(秘密鍵)はスマートフォンの中だけに保管し、PCには入力しない。手で入力する項目を減らすことで、アドレスや金額を間違えて入力するミスを防ぐ。
+
+\section{評価方法}
+
+この研究では、「コスト」と「資金ロック率」の2つを測る。比べる方法は、(a)普通の送金と(b)提案する方法の2つとする。
+
+\subsection{コスト}
+1回の注文でかかる手数料を円で計算して比べる。普通の送金は送金1回分の手数料とする。提案する方法は、お金を預ける時と渡す時の2回分の手数料を合計する。それぞれの手数料を記録して、その時の円の価値で計算する。ネットワークの混み具合で手数料が変わるため、真ん中の値と高い方の値を示す。
+
+\subsection{資金ロック率}
+お金を預けた注文の中で、期限を過ぎてもお金が渡されず、返ってもこない割合を資金ロック率と呼ぶ。もしお金が動かなくなった時は、注文番号、状態、記録、理由を残して原因を調べる。資金ロック率が0に近ければ、この仕組みがちゃんと動くことを示せる。
+
+\section{今後の計画}
+
+本研究の実施スケジュールを表1に示す。
+
+\begin{table}[h]
+\centering
+\caption{研究スケジュール}
+\begin{tabular}{|l|l|}
+\hline
+時期 & 作業内容 \\ \hline
+4月 & 要件分析・関連研究調査 \\ \hline
+5月 & 決済フロー・仕様設計 \\ \hline
+6月 & スマートコントラクト実装 \\ \hline
+7月 & EC側プロトタイプ実装 \\ \hline
+8月 & テスト・予備実験 \\ \hline
+9月 & 実証実験・評価 \\ \hline
+10月-11月 & 論文執筆・まとめ \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{必要機材}
+\begin{itemize}
+\item イーサリアム(テスト用のJPYC等を受け取るため、前期中に準備)
+\end{itemize}
+
+\section{結論}
+
+本研究では、JPYCを使った安全な支払い方法と、PCでQRコードを表示してスマートフォンで支払う流れを提案する。評価は「コスト」と「資金ロック率」の2つに絞り、実際に使えるかどうかと信頼できるかを数字で示す。今後は実際に作って動かし、手数料がどのくらいかかるか、お金が動かなくなる条件は何かを整理する。
+
+\bibliographystyle{junsrt}
+\bibliography{260120}
+
+\end{document}
