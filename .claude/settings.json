@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wsl lualatex --version)",
+      "Bash(wsl which platex)",
+      "Bash(wsl platex --version)",
+      "Bash(wsl ls /usr/local/texlive/2025/bin/x86_64-linux/)",
+      "Bash(wsl bash -c \"ls /usr/local/texlive/2025/bin/\")",
+      "Bash(wsl bash -c \"ls /usr/local/texlive/\")",
+      "Bash(wsl bash -c \"find / -name ''lualatex'' -o -name ''platex'' 2>/dev/null | head -5\")",
+      "Bash(wsl bash -c \"which platex 2>/dev/null || which lualatex 2>/dev/null || echo ''not in PATH''\")",
+      "Bash(wsl bash -c \"echo $PATH\")",
+      "Read(//usr/local/**)"
+    ]
+  }
+}
