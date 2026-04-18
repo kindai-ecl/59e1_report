@@ -10,7 +10,9 @@
       "Bash(wsl bash -c \"find / -name ''lualatex'' -o -name ''platex'' 2>/dev/null | head -5\")",
       "Bash(wsl bash -c \"which platex 2>/dev/null || which lualatex 2>/dev/null || echo ''not in PATH''\")",
       "Bash(wsl bash -c \"echo $PATH\")",
-      "Read(//usr/local/**)"
+      "Read(//usr/local/**)",
+      "Bash(kpsewhich jplain.bst)",
+      "Bash(kpsewhich junsrt.bst)"
     ]
   }
 }

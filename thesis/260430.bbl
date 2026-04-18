@@ -1,0 +1,23 @@
+\begin{thebibliography}{1}
+
+\bibitem{gopill2025}
+Junghwan Kim, Seungwoo Park, and Hyunjun Lee.
+\newblock {GO-PILL}: A geometry-aware {OCR} pipeline for reliable recognition
+  of debossed and curved pill imprints.
+\newblock {\em Mathematics}, 14(2):356, 2025.
+
+\bibitem{saad2024kidney}
+Ahmed Saad, Naif~M. Alotaibi, et~al.
+\newblock Identification of kidney-related medications using {AI} from
+  self-captured pill images.
+\newblock {\em PMC}, 2024.
+
+\bibitem{usuyama2020epillid}
+Naoto Usuyama, Aleksandra Lisowska, James Bullock, Justin Spence, and Linda~G.
+  Shapiro.
+\newblock {ePillID} dataset: A low-shot fine-grained benchmark for pill
+  identification.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition Workshops (CVPRW)}, 2020.
+
+\end{thebibliography}
