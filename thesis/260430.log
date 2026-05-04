@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.9.29)  18 APR 2026 18:43
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.9.29)  4 MAY 2026 17:38
  restricted system commands enabled.
 **260430.tex
 (./260430.tex
@@ -644,29 +644,31 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 11.09656pt on input line 61.
 
 
-[1](load cache: extra_lmroman9-regular.luc)
-LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 8.32242pt on input line 125.
-LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 8.32242pt on input line 125.
-
+[1]
 
 [2]
 
-[3]
-Overfull \hbox (23.65515pt too wide) in paragraph at lines 198--209
+[3](load cache: extra_lmroman9-regular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 8.32242pt on input line 155.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 8.32242pt on input line 155.
+
+
+[4]
+Overfull \hbox (23.65515pt too wide) in paragraph at lines 229--240
  [][][][] 
  []
 
 
 
-[4]
-
 [5]
 
 [6]
 
-[7] (./260430.bbl(load cache: extra_lmroman10-italic.luc)
+[7]
+
+[8] (./260430.bbl(load cache: extra_lmroman10-italic.luc)
 LaTeX Font Info:    Font shape `JT3/gt/m/it' in size <10> not available
 (Font)              Font shape `JT3/gt/m/n' tried instead on input line 7.
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
@@ -677,7 +679,7 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 9.24713pt on input line 7.
 )
 
-[8] (./260430.aux)
+[9] (./260430.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -686,12 +688,12 @@ L3 programming layer <2025-01-18>
 
 Here is how much of LuaTeX's memory you used:
  5832 strings out of 475506
- 156564,662416 words of node,token memory allocated
+ 195703,662416 words of node,token memory allocated
  855 words of node memory still in use:
    7 hlist, 1 vlist, 4 rule, 2 glue, 3 kern, 1 glyph, 151 attribute, 52 glue_spe
 c, 22 attribute_list, 1 write, 9 user_defined nodes
-   avail lists: 1:21,2:44030,3:387,4:283,5:86,6:52,7:4547,8:3,9:1958,10:14,11:94
-
+   avail lists: 1:33,2:49671,3:385,4:259,5:84,6:52,7:5372,8:2,9:2383,10:23,11:12
+8
  28676 multiletter control sequences out of 65536+600000
  50 fonts using 48451527 bytes
  125i,9n,128p,1871b,344s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -705,10 +707,10 @@ egular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/H
 aranoAjiGothic-Medium.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/pub
 lic/lm/lmroman12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/
 public/haranoaji/HaranoAjiMincho-Regular.otf>
-Output written on 260430.pdf (11 pages, 145941 bytes).
+Output written on 260430.pdf (12 pages, 159679 bytes).
 
-PDF statistics: 103 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+PDF statistics: 106 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
