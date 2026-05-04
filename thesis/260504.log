@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.9.29)  4 MAY 2026 18:46
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.9.29)  4 MAY 2026 21:09
  restricted system commands enabled.
 **260504.tex
 (./260504.tex
@@ -708,12 +708,11 @@ lar.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-r
 egular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/H
 aranoAjiGothic-Medium.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/pub
 lic/lm/lmroman12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/
-public/lm/lmroman17-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/openty
-pe/public/haranoaji/HaranoAjiMincho-Regular.otf>
-Output written on 260504.pdf (13 pages, 189460 bytes).
+public/haranoaji/HaranoAjiMincho-Regular.otf>
+Output written on 260504.pdf (13 pages, 184281 bytes).
 
-PDF statistics: 116 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+PDF statistics: 109 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
