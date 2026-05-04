@@ -12,7 +12,23 @@
       "Bash(wsl bash -c \"echo $PATH\")",
       "Read(//usr/local/**)",
       "Bash(kpsewhich jplain.bst)",
-      "Bash(kpsewhich junsrt.bst)"
+      "Bash(kpsewhich junsrt.bst)",
+      "Bash(pdftotext -f 1 -l 5 \"d:/dev/59e1_report/thesis/参考文献/124608.pdf\" -)",
+      "Bash(pdftotext -f 1 -l 5 \"d:/dev/59e1_report/thesis/参考文献/IET Image Processing - 2024 - Rádli - Metric‐based pill recognition with the help of textual and visual cues.pdf\" -)",
+      "Bash(pdftotext -f 1 -l 5 \"d:/dev/59e1_report/thesis/参考文献/b09460b4b9c1135ecbad186af13f0bfa322b.pdf\" -)",
+      "Bash(pdftotext -f 1 -l 5 \"d:/dev/59e1_report/thesis/参考文献/jimaging-11-00011.pdf\" -)",
+      "Bash(pdftotext -f 1 -l 5 \"d:/dev/59e1_report/thesis/参考文献/jmir-2023-1-e41043.pdf\" -)",
+      "Bash(pdftotext -f 1 -l 5 \"d:/dev/59e1_report/thesis/参考文献/IET\"* -)",
+      "Bash(pdftotext -f 1 -l 5 \"IET Image Processing - 2024 - Rádli - Metric‐based pill recognition with the help of textual and visual cues.pdf\" -)",
+      "Bash(python3 -c ' *)",
+      "Bash(cmd.exe /c \"python -c \\\\\"import fitz; doc = fitz.open\\('d:/dev/59e1_report/thesis/参考文献/124608.pdf'\\); [print\\(doc[i].get_text\\(\\)[:2000]\\) for i in range\\(min\\(3,len\\(doc\\)\\)\\)]\\\\\" 2>&1\")",
+      "Bash(cmd.exe /c \"python -c \\\\\"import fitz; doc = fitz.open\\('d:/dev/59e1_report/thesis/参考文献/b09460b4b9c1135ecbad186af13f0bfa322b.pdf'\\); [print\\(doc[i].get_text\\(\\)[:2000]\\) for i in range\\(min\\(3,len\\(doc\\)\\)\\)]\\\\\" 2>&1\")",
+      "Bash(pdftotext \"d:\\\\dev\\\\59e1_report\\\\thesis\\\\参考文献\\\\124608.pdf\" -)",
+      "Bash(pdftotext \"d:\\\\dev\\\\59e1_report\\\\thesis\\\\参考文献\\\\b09460b4b9c1135ecbad186af13f0bfa322b.pdf\" -)",
+      "Bash(lualatex -interaction=nonstopmode 260430.tex)",
+      "Read(//usr/**)",
+      "Read(//mingw64/**)",
+      "Read(//c/texlive/**)"
     ]
   }
 }
