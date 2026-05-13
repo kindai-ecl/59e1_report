@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex 260504"] 1777888000.17025 "260504.aux" "260504.bbl" "260504" 1777888003.50081 0
+["bibtex 260504"] 1777896544.45844 "260504.aux" "260504.bbl" "260504" 1777896547.2699 0
   "./reference.bib" 1777887997.51085 1193 6b08ec8c6201244ec446447c2a427fd9 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "260504.aux" 1777888002.66996 3210 42febb2870b691b3aa66da7ea468c91b "lualatex"
+  "260504.aux" 1777896546.58198 3210 42febb2870b691b3aa66da7ea468c91b "lualatex"
   (generated)
   "260504.bbl"
   "260504.blg"
   (rewritten before read)
-["lualatex"] 1777888000.33782 "260504.tex" "260504.pdf" "260504" 1777888003.50104 0
+["lualatex"] 1777896544.61703 "260504.tex" "260504.pdf" "260504" 1777896547.27014 0
   "/Users/kurere/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1776504706.87445 1924615 00e631720a15f814ed6146121037dccf ""
   "/Users/kurere/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1759134747.97316 2011213 f3ef4f31d2fe078f6ff31258426a4ba7 ""
   "/Users/kurere/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmmono9-regular.luc" 1759134748.16194 81875 5770eaada341be7c3327eb36573a2a7c ""
@@ -44,7 +44,6 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf" 1255129361 118828 4d461c73423fe2666dad2ff0dfc3ca68 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" 1255129361 111536 ae9d1b331000d544f47e5223081b7b54 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf" 1255129361 110400 d844cffffa1af59f9d2bb1bfdb6f1a2c ""
-  "/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf" 1255129361 110248 1d75fdc9dbe45e70de83ff6cc79a81c9 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf" 1255129361 112680 8bab1cbacdfe2fe22ce627aaf5174f5d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf" 1255129361 95128 317da301f5d16ce70da8e5df556bc592 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf" 1255129361 95160 a298a0c894450a41822166397e6bc032 ""
@@ -189,10 +188,10 @@
   "/usr/local/texlive/2025/texmf-dist/tex/platex/jsclasses/jslogo.sty" 1601931076 5585 8e4615c54073c390d14154b29cee89cb ""
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1759132969 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/luahbtex/lualatex.fmt" 1759132928 5582804 4732f6be216446843a8519aee28d1180 ""
-  "260504.aux" 1777888002.66996 3210 42febb2870b691b3aa66da7ea468c91b "lualatex"
-  "260504.bbl" 1777888000.33627 943 d8ad5fbadf09ef8846d3b20fcd97eb0d "bibtex 260504"
-  "260504.tex" 1777887966.03417 24754 13e1d89312cb46341beaf6423f3f9bf7 ""
-  "260504.toc" 1777888002.67109 1487 fbe2fd9a649dbcdd75676bdb2a0b7c5f "lualatex"
+  "260504.aux" 1777896546.58198 3210 42febb2870b691b3aa66da7ea468c91b "lualatex"
+  "260504.bbl" 1777896544.61554 943 d8ad5fbadf09ef8846d3b20fcd97eb0d "bibtex 260504"
+  "260504.tex" 1777896504.56084 23584 5396b27bee043cb9418ac4a26ed43300 ""
+  "260504.toc" 1777896546.58315 1487 fbe2fd9a649dbcdd75676bdb2a0b7c5f "lualatex"
   (generated)
   "260504.aux"
   "260504.log"
