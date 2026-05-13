@@ -15,5 +15,14 @@
 \contentsline {subsection}{\numberline {3.4}使用データ}{6}{}%
 \contentsline {subsection}{\numberline {3.5}評価方法}{6}{}%
 \contentsline {subsection}{\numberline {3.6}実験計画}{6}{}%
-\contentsline {section}{\numberline {4}結果・考察}{8}{}%
-\contentsline {section}{\numberline {5}結論・今後の課題}{9}{}%
+\contentsline {section}{\numberline {4}予備実験}{8}{}%
+\contentsline {subsection}{\numberline {4.1}予備実験の目的}{8}{}%
+\contentsline {subsection}{\numberline {4.2}使用データと拡張処理}{8}{}%
+\contentsline {subsection}{\numberline {4.3}学習設定}{8}{}%
+\contentsline {subsection}{\numberline {4.4}単一薬剤による予備学習}{9}{}%
+\contentsline {subsection}{\numberline {4.5}Gemini APIとの比較}{9}{}%
+\contentsline {subsection}{\numberline {4.6}全薬剤を対象とした予備学習}{10}{}%
+\contentsline {subsection}{\numberline {4.7}誤識別の傾向分析}{10}{}%
+\contentsline {subsection}{\numberline {4.8}予備実験から得られた示唆}{11}{}%
+\contentsline {section}{\numberline {5}結果・考察}{12}{}%
+\contentsline {section}{\numberline {6}結論・今後の課題}{13}{}%

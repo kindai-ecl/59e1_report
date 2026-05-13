@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.9.29)  4 MAY 2026 21:09
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.9.29)  13 MAY 2026 15:26
  restricted system commands enabled.
 **260504.tex
 (./260504.tex
@@ -668,9 +668,28 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [7]
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
 [8]
 
-[9] (./260504.bbl(load cache: extra_lmroman10-italic.luc)
+[9]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[10]
+
+[11]
+
+[12]
+
+[13] (./260504.bbl(load cache: extra_lmroman10-italic.luc)
 LaTeX Font Info:    Font shape `JT3/gt/m/it' in size <10> not available
 (Font)              Font shape `JT3/gt/m/n' tried instead on input line 7.
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
@@ -681,7 +700,7 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 9.24713pt on input line 7.
 )
 
-[10] (./260504.aux)
+[14] (./260504.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -689,14 +708,14 @@ L3 programming layer <2025-01-18>
 )
 
 Here is how much of LuaTeX's memory you used:
- 5843 strings out of 475506
+ 5850 strings out of 475506
  195705,662416 words of node,token memory allocated
  807 words of node memory still in use:
    7 hlist, 1 vlist, 4 rule, 2 glue, 3 kern, 1 glyph, 129 attribute, 52 glue_spe
 c, 20 attribute_list, 1 write, 9 user_defined nodes
-   avail lists: 1:40,2:54827,3:459,4:340,5:86,6:86,7:5823,8:1,9:2665,10:42,11:12
-8
- 28687 multiletter control sequences out of 65536+600000
+   avail lists: 1:35,2:54827,3:459,4:427,5:123,6:86,7:5823,8:2,9:2665,10:42,11:1
+28
+ 28694 multiletter control sequences out of 65536+600000
  58 fonts using 56392183 bytes
  125i,11n,128p,1871b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.ot
@@ -708,11 +727,12 @@ lar.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-r
 egular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/H
 aranoAjiGothic-Medium.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/pub
 lic/lm/lmroman12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/
-public/haranoaji/HaranoAjiMincho-Regular.otf>
-Output written on 260504.pdf (13 pages, 184281 bytes).
+public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2025/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on 260504.pdf (17 pages, 234660 bytes).
 
-PDF statistics: 109 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+PDF statistics: 125 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
