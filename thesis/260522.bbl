@@ -1,0 +1,22 @@
+\begin{thebibliography}{1}
+
+\bibitem{heo2023pill}
+Yejin Heo, Hyunjung Kim, Sungjin Lee, et~al.
+\newblock Deep learning-based pill identification with imprint text detection
+  and recognition.
+\newblock {\em Journal of Medical Internet Research}, 25:e41043, 2023.
+
+\bibitem{gemini2024pill}
+R.~Menaha et~al.
+\newblock Drug pills identification system using {Google Gemini LLM}: A
+  generative {AI} approach.
+\newblock In {\em Proceedings of the International Conference on Electronics,
+  Robotics and Control Systems (ICERCS)}, 2024.
+
+\bibitem{radli2024metric}
+Rich{\'a}rd R{\'a}dli and L{\'a}szl{\'o} Toka.
+\newblock Metric-based pill recognition with the help of textual and visual
+  cues.
+\newblock {\em IET Image Processing}, 18(1):1--13, 2024.
+
+\end{thebibliography}
