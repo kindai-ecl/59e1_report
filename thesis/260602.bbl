@@ -1,0 +1,40 @@
+\begin{thebibliography}{1}
+
+\bibitem{who_medication}
+{World Health Organization}.
+\newblock Medication without harm -- {WHO} global patient safety challenge.
+\newblock \url{https://www.who.int/initiatives/medication-without-harm}, 2017.
+\newblock 2026年6月2日閲覧.
+
+\bibitem{jcqhc_hiyari}
+{日本医療機能評価機構}.
+\newblock 薬局ヒヤリ・ハット事例収集・分析事業.
+\newblock \url{https://www.yakkyoku-hiyari.jcqhc.or.jp/}.
+\newblock 2026年6月2日閲覧.
+
+\bibitem{suetsugu2026ai}
+末次王卓, 金澤直子, 正門佳法, 天達菜緒, 副田雪乃, 屋地慶子, 寺薗英之.
+\newblock
+  {AI}画像解析錠剤識別システムの使用による持参薬錠剤一包化鑑別作業の効率化と薬剤助手へのタスク・シフト／タスク・シェアに関する評価.
+\newblock 医療薬学, Vol.~52, No.~5, pp. 273--281, 2026.
+
+\bibitem{heo2023pill}
+Yejin Heo, Hyunjung Kim, Sungjin Lee, et~al.
+\newblock Deep learning-based pill identification with imprint text detection
+  and recognition.
+\newblock {\em Journal of Medical Internet Research}, Vol.~25, p. e41043, 2023.
+
+\bibitem{radli2024metric}
+Rich{\'a}rd R{\'a}dli and L{\'a}szl{\'o} Toka.
+\newblock Metric-based pill recognition with the help of textual and visual
+  cues.
+\newblock {\em IET Image Processing}, Vol.~18, No.~1, pp. 1--13, 2024.
+
+\bibitem{gemini2024pill}
+R.~Menaha, et~al.
+\newblock Drug pills identification system using {Google Gemini LLM}: A
+  generative {AI} approach.
+\newblock In {\em Proceedings of the International Conference on Electronics,
+  Robotics and Control Systems (ICERCS)}, 2024.
+
+\end{thebibliography}
