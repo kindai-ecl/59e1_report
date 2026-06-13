@@ -28,7 +28,8 @@
       "Bash(lualatex -interaction=nonstopmode 260430.tex)",
       "Read(//usr/**)",
       "Read(//mingw64/**)",
-      "Read(//c/texlive/**)"
+      "Read(//c/texlive/**)",
+      "Bash(open /Users/kurere/dev/59e1_report/thesis/260630.pdf)"
     ]
   }
 }
