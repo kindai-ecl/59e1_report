@@ -1,4 +1,4 @@
-\documentclass{jsarticle}
+\documentclass[dvipdfmx]{jsarticle}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{url}
@@ -361,15 +361,15 @@ LoRA（Low-Rank Adaptation）は，事前学習済みモデルの重みをその
 \centering
 \begin{tikzpicture}[
   box/.style={draw, rounded corners=3pt, minimum width=2.5cm, minimum height=1.5cm, align=center, font=\small, fill=white},
-  step/.style={draw, rounded corners=3pt, minimum width=2.5cm, minimum height=1.5cm, align=center, font=\small, fill=yellow!18},
+  stepbox/.style={draw, rounded corners=3pt, minimum width=2.5cm, minimum height=1.5cm, align=center, font=\small, fill=yellow!18},
   arrow/.style={-Stealth, thick}
 ]
 
 % 上段：入力 →（1）検出 →（2）切り出し →（3）単剤識別
 \node[box] (img) {複数薬剤画像\\（薬剤が\\複数枚）};
-\node[step, right=0.7cm of img] (det) {(1) 検出\\薬剤の位置を\\四角で出力};
+\node[stepbox, right=0.7cm of img] (det) {(1) 検出\\薬剤の位置を\\四角で出力};
 \node[box, right=0.7cm of det] (crop) {(2) 切り出し\\各薬剤を\\1枚ずつに};
-\node[step, right=0.7cm of crop] (cls) {(3) 単剤識別\\各領域を\\個別に識別};
+\node[stepbox, right=0.7cm of crop] (cls) {(3) 単剤識別\\各領域を\\個別に識別};
 
 % 下段：（4）統合 → 出力
 \node[box, below=0.9cm of cls] (merge) {(4) 統合\\答えを\\まとめる};
