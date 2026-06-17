@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.euc) (TeX Live 2025) (preloaded format=platex 2025.9.29)  13 JUN 2026 15:44
+This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.euc) (TeX Live 2025) (preloaded format=platex 2025.9.29)  18 JUN 2026 01:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -672,15 +672,15 @@ LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
 
 [10]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <7> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 568.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 569.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 568.
+(Font)              scaled to size 6.72699pt on input line 569.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <7> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 568.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 569.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 568.
+(Font)              scaled to size 6.72699pt on input line 569.
 
-Underfull \hbox (badness 3746) in paragraph at lines 594--595
+Underfull \hbox (badness 3746) in paragraph at lines 595--596
 []$\OMS/cmsy/m/n/9 ^^F$\OT1/cmr/m/n/9 15 \JY1/mc/m/n/9 度回転 （ キ ャンバス拡
 張あり ， 余白は
  []
@@ -701,24 +701,24 @@ Underfull \hbox (badness 3746) in paragraph at lines 594--595
 
 [17]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 959.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 960.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 959.
+(Font)              scaled to size 8.64899pt on input line 960.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 959.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 960.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 959.
+(Font)              scaled to size 8.64899pt on input line 960.
 
 
 [18]
 LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
-1004.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 1004.
+1005.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 1005.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 1004.
+(Font)              for symbol `textbraceleft' on input line 1005.
 
 
 
@@ -759,10 +759,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  15620 strings out of 473836
  312544 string characters out of 5731189
- 706056 words of memory out of 5000000
+ 706055 words of memory out of 5000000
  38608 multiletter control sequences out of 15000+600000
  582652 words of font info for 144 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  84i,11n,93p,1389b,866s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 260630.dvi (30 pages, 154576 bytes).
+Output written on 260630.dvi (30 pages, 155224 bytes).
