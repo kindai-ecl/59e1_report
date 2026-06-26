@@ -28,7 +28,7 @@
 \contentsline {subsubsection}{\numberline {4.2.3}データ拡張}{12}{}%
 \contentsline {subsection}{\numberline {4.3}学習設定}{12}{}%
 \contentsline {subsection}{\numberline {4.4}評価手順}{13}{}%
-\contentsline {subsection}{\numberline {4.5}予備実験（単一薬剤メインテート錠）}{13}{}%
+\contentsline {subsection}{\numberline {4.5}予備実験（単一薬剤メインテート錠）}{14}{}%
 \contentsline {subsubsection}{\numberline {4.5.1}出力形式・方式の比較}{14}{}%
 \contentsline {subsubsection}{\numberline {4.5.2}拡張データセットでの学習と評価}{14}{}%
 \contentsline {subsection}{\numberline {4.6}初期検討：データ拡張なしでの全薬剤学習}{15}{}%
@@ -36,18 +36,40 @@
 \contentsline {subsection}{\numberline {4.8}外部画像での汎化（予備的検証）}{17}{}%
 \contentsline {subsection}{\numberline {4.9}複数薬剤同時識別の結果}{17}{}%
 \contentsline {subsubsection}{\numberline {4.9.1}評価データの作成}{17}{}%
-\contentsline {subsubsection}{\numberline {4.9.2}一括質問方式の失敗}{17}{}%
+\contentsline {subsubsection}{\numberline {4.9.2}一括質問方式の失敗}{18}{}%
 \contentsline {subsubsection}{\numberline {4.9.3}検出→単剤分類方式の結果と3者比較}{18}{}%
-\contentsline {subsection}{\numberline {4.10}検出器の専用学習による改善}{18}{}%
-\contentsline {subsubsection}{\numberline {4.10.1}評価セットと上限値の診断（検出が完璧な場合）}{18}{}%
+\contentsline {subsection}{\numberline {4.10}検出器の専用学習による改善}{19}{}%
+\contentsline {subsubsection}{\numberline {4.10.1}評価セットと上限値の診断（検出が完璧な場合）}{19}{}%
 \contentsline {subsubsection}{\numberline {4.10.2}検出器LoRAの学習}{19}{}%
 \contentsline {subsubsection}{\numberline {4.10.3}検出器差し替え後の再評価}{19}{}%
 \contentsline {subsection}{\numberline {4.11}過検出抑制の検証（負の結果）}{20}{}%
 \contentsline {subsection}{\numberline {4.12}軽量化の評価（量子化・モデルサイズ）}{20}{}%
-\contentsline {subsection}{\numberline {4.13}誤識別の横断分析}{21}{}%
-\contentsline {subsection}{\numberline {4.14}考察}{23}{}%
-\contentsline {section}{\numberline {5}結論・今後の課題}{24}{}%
-\contentsline {subsection}{\numberline {5.1}結論}{24}{}%
-\contentsline {subsection}{\numberline {5.2}今後の課題}{24}{}%
-\contentsline {section}{謝辞}{25}{}%
-\contentsline {section}{参考文献}{26}{}%
+\contentsline {subsection}{\numberline {4.13}誤識別の横断分析}{22}{}%
+\contentsline {subsection}{\numberline {4.14}Geminiによる拡張前の元画像287枚の評価}{23}{}%
+\contentsline {paragraph}{入力・条件}{23}{}%
+\contentsline {paragraph}{結果}{23}{}%
+\contentsline {subsection}{\numberline {4.15}Web収集画像での汎化評価}{24}{}%
+\contentsline {paragraph}{入力・条件}{24}{}%
+\contentsline {paragraph}{結果}{24}{}%
+\contentsline {subsection}{\numberline {4.16}回転・反転への対策}{25}{}%
+\contentsline {paragraph}{(a) 拡張強化による再学習}{25}{}%
+\contentsline {paragraph}{(b) 向き補正前処理（再学習なし）}{25}{}%
+\contentsline {subsection}{\numberline {4.17}学習枚数の感度分析（few-shot曲線）と表裏・錠数の効果}{26}{}%
+\contentsline {paragraph}{入力・条件}{26}{}%
+\contentsline {paragraph}{結果（クラス数一定の33薬剤）}{26}{}%
+\contentsline {paragraph}{表裏・錠数の効果}{26}{}%
+\contentsline {subsection}{\numberline {4.18}量子化・モデルサイズの実画像（拡張なし）評価}{27}{}%
+\contentsline {subsection}{\numberline {4.19}データ分割の妥当性検証（リーク監査）}{27}{}%
+\contentsline {paragraph}{入力・処理}{27}{}%
+\contentsline {paragraph}{結果}{27}{}%
+\contentsline {subsection}{\numberline {4.20}推論ベンチマーク（メモリ・速度）}{27}{}%
+\contentsline {subsection}{\numberline {4.21}思考過程の可視化（負の結果）}{28}{}%
+\contentsline {subsection}{\numberline {4.22}考察}{28}{}%
+\contentsline {section}{\numberline {5}結論・今後の課題}{30}{}%
+\contentsline {subsection}{\numberline {5.1}結論}{30}{}%
+\contentsline {subsection}{\numberline {5.2}今後の課題}{30}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}安全性の確保（誤投薬の回避）}{30}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}複数薬剤同時識別の拡張}{31}{}%
+\contentsline {subsubsection}{\numberline {5.2.3}スケール・剤形に関する課題}{32}{}%
+\contentsline {section}{謝辞}{33}{}%
+\contentsline {section}{参考文献}{34}{}%
