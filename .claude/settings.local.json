@@ -3,9 +3,14 @@
     "allow": [
       "Bash(platex:*)",
       "Bash(pbibtex:*)",
-      "Bash(dvipdfmx:*)"
+      "Bash(dvipdfmx:*)",
+      "Bash(rm -f 260630.aux 260630.bbl 260630.blg && platex -interaction=nonstopmode 260630.tex 2>/dev/null; pbibtex 260630 2>&1 | tail -5; platex -interaction=nonstopmode 260630.tex 2>/dev/null | tail -2; platex -interaction=nonstopmode 260630.tex 2>/dev/null | tail -2; dvipdfmx 260630.dvi 2>&1 | tail -3 && echo \"=== done ===\")",
+      "Bash(rm -f 260630.aux 260630.bbl 260630.blg && platex -interaction=nonstopmode 260630.tex 2>/dev/null | tail -2 && platex -interaction=nonstopmode 260630.tex 2>/dev/null | tail -2 && dvipdfmx 260630.dvi 2>&1 | tail -3 && echo \"=== done ===\")"
     ],
     "deny": [],
-    "ask": []
+    "ask": [],
+    "additionalDirectories": [
+      "/Users/kurere/dev/59e1_report/thesis"
+    ]
   }
 }
