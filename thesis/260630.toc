@@ -63,7 +63,7 @@
 \contentsline {paragraph}{入力・処理}{28}{}%
 \contentsline {paragraph}{結果}{28}{}%
 \contentsline {subsection}{\numberline {4.19}推論ベンチマーク（メモリ・速度）}{29}{}%
-\contentsline {subsection}{\numberline {4.20}根拠説明文の生成可否（負の結果）}{29}{}%
+\contentsline {subsection}{\numberline {4.20}根拠説明文の生成可否}{29}{}%
 \contentsline {subsection}{\numberline {4.21}考察}{29}{}%
 \contentsline {section}{\numberline {5}結論・今後の課題}{31}{}%
 \contentsline {subsection}{\numberline {5.1}結論}{31}{}%
