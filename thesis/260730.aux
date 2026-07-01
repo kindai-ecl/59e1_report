@@ -1,0 +1,218 @@
+\relax 
+\citation{who_medication}
+\citation{jcqhc_hiyari}
+\citation{jcqhc_similarity}
+\citation{suetsugu2026ai}
+\citation{suetsugu2026ai}
+\citation{heo2023pill}
+\citation{radli2024metric}
+\@writefile{toc}{\contentsline {section}{\numberline {1}序論}{1}{}\protected@file@percent }
+\newlabel{sec1}{{1}{1}{}{section.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}本研究の背景}{1}{}\protected@file@percent }
+\citation{gemini2024pill}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}本研究の目的}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}本報告書の構成}{2}{}\protected@file@percent }
+\citation{heo2023pill}
+\citation{radli2024metric}
+\citation{radli2024word}
+\citation{gemini2024pill}
+\@writefile{toc}{\contentsline {section}{\numberline {2}関連研究・関連技術}{3}{}\protected@file@percent }
+\newlabel{sec2}{{2}{3}{}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}画像特徴・刻印文字を用いた薬剤識別手法}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}画像特徴とテキスト特徴を用いたマルチモーダル薬剤識別手法}{3}{}\protected@file@percent }
+\citation{heo2023pill}
+\citation{radli2024metric}
+\citation{gemini2024pill}
+\citation{gemini2024pill}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}生成AI・LLMを用いた薬剤識別支援手法}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}先行研究の整理と本研究の位置づけ}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 従来手法の問題点と本研究の対応}}{5}{}\protected@file@percent }
+\newlabel{tab:related}{{1}{5}{}{table.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}提案手法}{5}{}\protected@file@percent }
+\newlabel{sec3}{{3}{5}{}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}研究テーマの整理}{5}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 研究テーマの課題・解決策・評価方法の対応}}{5}{}\protected@file@percent }
+\newlabel{tab:theme}{{2}{5}{}{table.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 本研究の全体像：オープンソースVLMのLoRA特化を中核に，単一識別・複数薬剤・軽量化の3軸で評価し，交差検証等で妥当性を検証する}}{6}{}\protected@file@percent }
+\newlabel{fig:overview}{{1}{6}{}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}解決策の妥当性}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}使用モデル：Qwen3.5}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}提案手法：Qwen3.5 の LoRA ファインチューニング}{7}{}\protected@file@percent }
+\newlabel{sec:proposed}{{3.4}{7}{}{subsection.3.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}LoRAによる追加学習}{7}{}\protected@file@percent }
+\newlabel{eq:lora}{{1}{7}{}{equation.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 提案手法の処理フロー：薬剤画像と質問文をQwen3.5-4Bに入力し，LoRAアダプタで薬剤画像に適応させたモデルが薬剤名を出力する}}{8}{}\protected@file@percent }
+\newlabel{fig:pipeline}{{2}{8}{}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 提案手法の実行例：PTPシートの薬剤画像（左）を入力すると，特化モデルが薬剤名（右）を出力する}}{8}{}\protected@file@percent }
+\newlabel{fig:example_single}{{3}{8}{}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}複数薬剤同時識別への拡張：検出→単剤分類}{8}{}\protected@file@percent }
+\newlabel{sec:multi}{{3.5}{8}{}{subsection.3.5}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces 検出→単剤分類による複数薬剤同時識別}}{9}{}\protected@file@percent }
+\newlabel{alg:multi}{{1}{9}{}{algorithm.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 複数薬剤同時識別の処理フロー：検出→切り出し→単剤識別→統合の2段構成．検出（1）と単剤識別（3）は，同一のQwen3.5-4Bに検出用・識別用のLoRAアダプタを切り替えて実行する}}{9}{}\protected@file@percent }
+\newlabel{fig:multi_pipeline}{{4}{9}{}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 複数薬剤画像の例（2薬剤）：このように複数のPTPシートが並ぶ画像に対し，検出→単剤分類により各領域を個別に識別して「メインテート錠，ウルソ錠」の集合を出力する}}{10}{}\protected@file@percent }
+\newlabel{fig:example_multi}{{5}{10}{}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}比較手法}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}使用データ}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}評価方法}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.8.1}単一薬剤識別の評価指標}{11}{}\protected@file@percent }
+\newlabel{eq:top1}{{2}{11}{}{equation.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.8.2}複数薬剤同時識別の評価指標}{11}{}\protected@file@percent }
+\newlabel{eq:exact}{{3}{11}{}{equation.3}{}}
+\newlabel{eq:f1}{{4}{11}{}{equation.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.9}実験計画}{11}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces 実験スケジュール}}{12}{}\protected@file@percent }
+\newlabel{tab:schedule}{{3}{12}{}{table.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}実験と結果}{13}{}\protected@file@percent }
+\newlabel{sec4}{{4}{13}{}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}実験環境}{13}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 実験環境}}{13}{}\protected@file@percent }
+\newlabel{tab:env}{{4}{13}{}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}データセットの構築}{13}{}\protected@file@percent }
+\newlabel{sec:dataset}{{4.2}{13}{}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}元画像の撮影}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}学習・評価分割}{13}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces データセットの内訳（41薬剤）．学習・評価枚数は11種データ拡張適用後の枚数}}{14}{}\protected@file@percent }
+\newlabel{tab:dataset}{{5}{14}{}{table.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}データ拡張}{14}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces データ拡張の種類とパラメータ（1枚の元画像から11枚を生成）}}{14}{}\protected@file@percent }
+\newlabel{tab:aug}{{6}{14}{}{table.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}拡張なし評価画像}{14}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 評価データの全体構成：287枚の撮影元画像を元画像単位で学習/評価に分割し，目的に応じて拡張なし・拡張あり・合成画像を使い分ける．Web収集画像は学習に用いない別環境データである}}{15}{}\protected@file@percent }
+\newlabel{fig:dataflow}{{6}{15}{}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}学習設定}{15}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces LoRAファインチューニングの設定}}{15}{}\protected@file@percent }
+\newlabel{tab:lora_config}{{7}{15}{}{table.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces 全薬剤学習における損失推移（学習2,343枚）}}{16}{}\protected@file@percent }
+\newlabel{tab:loss_all}{{8}{16}{}{table.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}評価手順}{16}{}\protected@file@percent }
+\newlabel{sec:evalproc}{{4.4}{16}{}{subsection.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}予備実験（単一薬剤メインテート錠）}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1}出力形式・方式の比較}{16}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces 出力形式・方式の比較（テスト画像5枚・メインテート錠2.5mg）}}{17}{}\protected@file@percent }
+\newlabel{tab:method_compare}{{9}{17}{}{table.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.2}拡張データセットでの学習と評価}{17}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces 単一薬剤での学習損失推移}}{17}{}\protected@file@percent }
+\newlabel{tab:loss_meinte}{{10}{17}{}{table.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces メインテート錠2.5mgにおけるLoRAとGeminiの比較（予備実験・参考値）}}{17}{}\protected@file@percent }
+\newlabel{tab:vs_gemini}{{11}{17}{}{table.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}初期検討：データ拡張なしでの全薬剤学習}{18}{}\protected@file@percent }
+\newlabel{sec:noaug}{{4.6}{18}{}{subsection.4.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}単一薬剤識別の結果（本実験）}{18}{}\protected@file@percent }
+\newlabel{sec:single_result}{{4.7}{18}{}{subsection.4.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces 単一薬剤識別の3者比較（拡張画像814枚・画像変形への頑健性と相対比較）}}{18}{}\protected@file@percent }
+\newlabel{tab:single_compare}{{12}{18}{}{table.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces 提案手法（ファインチューニング後4B）の薬剤別Top-1成功率（成功数／評価枚数）}}{19}{}\protected@file@percent }
+\newlabel{tab:per_drug}{{13}{19}{}{table.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Geminiの正答率が低かった薬剤と提案手法との比較（同一評価画像）}}{19}{}\protected@file@percent }
+\newlabel{tab:gemini_weak}{{14}{19}{}{table.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces 提案手法（ファインチューニング後4B）の評価条件別の結果}}{19}{}\protected@file@percent }
+\newlabel{tab:single_extra}{{15}{19}{}{table.15}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces 誤識別画像の拡張種別内訳（提案手法・15枚）}}{20}{}\protected@file@percent }
+\newlabel{tab:failed_aug}{{16}{20}{}{table.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.8}外部画像での汎化（予備的検証）}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.9}複数薬剤同時識別の結果}{20}{}\protected@file@percent }
+\newlabel{sec:multi_result}{{4.9}{20}{}{subsection.4.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.9.1}評価データの作成}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.9.2}一括質問方式の失敗}{21}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces 一括質問方式の結果（ファインチューニング後4B）}}{21}{}\protected@file@percent }
+\newlabel{tab:multi_naive}{{17}{21}{}{table.17}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.9.3}検出→単剤分類方式の結果と3者比較}{21}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces 複数薬剤同時識別の3者比較（同一の合成評価画像1,000枚）}}{21}{}\protected@file@percent }
+\newlabel{tab:multi_compare}{{18}{21}{}{table.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.10}検出器の専用学習による改善}{22}{}\protected@file@percent }
+\newlabel{sec:detector}{{4.10}{22}{}{subsection.4.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.10.1}評価セットと正解bbox基準値による診断}{22}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces 合成解像度別の正解bbox基準値と実機値（素のベース検出）}}{22}{}\protected@file@percent }
+\newlabel{tab:a0}{{19}{22}{}{table.19}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.10.2}検出器LoRAの学習}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.10.3}検出器差し替え後の再評価}{22}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces 検出器学習の効果（完全一致率，括弧内はF1）}}{23}{}\protected@file@percent }
+\newlabel{tab:a3}{{20}{23}{}{table.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {21}{\ignorespaces 新検出（学習した検出器）の薬剤数別の完全一致率}}{23}{}\protected@file@percent }
+\newlabel{tab:a3_group}{{21}{23}{}{table.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.11}軽量化の評価（量子化・モデルサイズ）}{23}{}\protected@file@percent }
+\newlabel{sec:light}{{4.11}{23}{}{subsection.4.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {22}{\ignorespaces モデルサイズ・量子化と単一薬剤識別精度（Top-1，拡張あり814枚・相対比較）}}{23}{}\protected@file@percent }
+\newlabel{tab:size_single}{{22}{23}{}{table.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {23}{\ignorespaces モデルサイズ・量子化と複数薬剤同時識別精度（完全一致率，括弧内はF1，1,000枚）}}{24}{}\protected@file@percent }
+\newlabel{tab:size_multi}{{23}{24}{}{table.23}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {24}{\ignorespaces 単一・複数混在評価（完全一致率，括弧内はF1，単一100枚＋複数100枚）}}{24}{}\protected@file@percent }
+\newlabel{tab:size_mixed}{{24}{24}{}{table.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.12}Geminiによる拡張前の元画像287枚の評価}{24}{}\protected@file@percent }
+\newlabel{sec:gemini_orig}{{4.12}{24}{}{subsection.4.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{入力・条件}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{結果}{25}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {25}{\ignorespaces Gemini（拡張前の元画像287枚）の表裏・錠数別正答率}}{25}{}\protected@file@percent }
+\newlabel{tab:gemini_orig}{{25}{25}{}{table.25}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {26}{\ignorespaces Geminiが失敗した3枚（拡張前の元画像）}}{25}{}\protected@file@percent }
+\newlabel{tab:gemini_orig_fail}{{26}{25}{}{table.26}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.13}Web収集画像での汎化評価}{25}{}\protected@file@percent }
+\newlabel{sec:webgen}{{4.13}{25}{}{subsection.4.13}{}}
+\@writefile{toc}{\contentsline {paragraph}{入力・条件}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{結果}{26}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {27}{\ignorespaces 自前撮影画像とWeb収集画像の比較（FT後4B）}}{26}{}\protected@file@percent }
+\newlabel{tab:web_main}{{27}{26}{}{table.27}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {28}{\ignorespaces Web収集画像のモデルサイズ・量子化別正答率（FT後・136枚）}}{26}{}\protected@file@percent }
+\newlabel{tab:web_size}{{28}{26}{}{table.28}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {29}{\ignorespaces Web収集画像のズーム率別正答率（FT後4B・136枚）}}{26}{}\protected@file@percent }
+\newlabel{tab:web_zoom}{{29}{26}{}{table.29}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.14}回転・反転への対策}{26}{}\protected@file@percent }
+\newlabel{sec:rotation}{{4.14}{26}{}{subsection.4.14}{}}
+\@writefile{toc}{\contentsline {paragraph}{(a) 拡張強化による再学習}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(b) 向き補正前処理（再学習なし）}{27}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {30}{\ignorespaces 回転・反転対策の効果（標準評価814枚）}}{27}{}\protected@file@percent }
+\newlabel{tab:rotation}{{30}{27}{}{table.30}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.15}学習枚数の感度分析（few-shot曲線）と表裏・錠数の効果}{27}{}\protected@file@percent }
+\newlabel{sec:fewshot}{{4.15}{27}{}{subsection.4.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.15.1}実験条件}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.15.2}学習枚数の比較}{27}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {31}{\ignorespaces 学習枚数Nと正答率（33薬剤・クラス数一定）}}{28}{}\protected@file@percent }
+\newlabel{tab:fewshot}{{31}{28}{}{table.31}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces 1薬剤あたりの学習元画像枚数とTop-1正答率（33薬剤．横軸の「全部」は5～8枚）}}{28}{}\protected@file@percent }
+\newlabel{fig:fewshot_curve}{{7}{28}{}{figure.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.15.3}表裏および錠数の分析}{28}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {32}{\ignorespaces 評価画像の表裏・錠数別正答率（33薬剤・延べ316件）}}{28}{}\protected@file@percent }
+\newlabel{tab:fewshot_face_count}{{32}{28}{}{table.32}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {33}{\ignorespaces 学習画像との面・錠数の一致による正答率（延べ237件）}}{29}{}\protected@file@percent }
+\newlabel{tab:fewshot_match}{{33}{29}{}{table.33}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.16}量子化・モデルサイズの実画像（拡張なし）評価}{29}{}\protected@file@percent }
+\newlabel{sec:quant_real}{{4.16}{29}{}{subsection.4.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {34}{\ignorespaces モデルサイズ・量子化別の単一薬剤識別精度（拡張なし元画像74枚）}}{29}{}\protected@file@percent }
+\newlabel{tab:quant_real}{{34}{29}{}{table.34}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.17}データ分割の妥当性検証（リーク監査）}{29}{}\protected@file@percent }
+\newlabel{sec:leak}{{4.17}{29}{}{subsection.4.17}{}}
+\@writefile{toc}{\contentsline {paragraph}{入力・処理}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{結果}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.18}5分割交差検証による頑健性の確認}{30}{}\protected@file@percent }
+\newlabel{sec:cv}{{4.18}{30}{}{subsection.4.18}{}}
+\@writefile{toc}{\contentsline {paragraph}{入力・条件}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{結果}{30}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {35}{\ignorespaces 5分割交差検証のfold別Top-1精度（テストは拡張なし元画像287枚）}}{30}{}\protected@file@percent }
+\newlabel{tab:cv}{{35}{30}{}{table.35}{}}
+\@writefile{toc}{\contentsline {paragraph}{Geminiとの同一画像での直接比較}{31}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {36}{\ignorespaces 同一の元画像287枚における提案手法（5分割FT）とGeminiの正誤対応}}{31}{}\protected@file@percent }
+\newlabel{tab:cv_gemini}{{36}{31}{}{table.36}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.19}推論ベンチマーク（メモリ・速度）}{31}{}\protected@file@percent }
+\newlabel{sec:bench}{{4.19}{31}{}{subsection.4.19}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {37}{\ignorespaces モデルサイズ・量子化別の精度・メモリ・速度}}{31}{}\protected@file@percent }
+\newlabel{tab:bench}{{37}{31}{}{table.37}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.20}根拠説明文の生成可否}{32}{}\protected@file@percent }
+\newlabel{sec:reasoning}{{4.20}{32}{}{subsection.4.20}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.21}考察}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}結論・今後の課題}{34}{}\protected@file@percent }
+\newlabel{sec5}{{5}{34}{}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}結論}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}今後の課題}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{謝辞}{36}{}\protected@file@percent }
+\bibcite{who_medication}{1}
+\bibcite{jcqhc_hiyari}{2}
+\bibcite{jcqhc_similarity}{3}
+\bibcite{suetsugu2026ai}{4}
+\bibcite{heo2023pill}{5}
+\bibcite{radli2024metric}{6}
+\bibcite{radli2024word}{7}
+\bibcite{gemini2024pill}{8}
+\@writefile{toc}{\contentsline {section}{参考文献}{37}{}\protected@file@percent }
+\gdef \@abspage@last{41}
