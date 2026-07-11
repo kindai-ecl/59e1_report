@@ -101,12 +101,14 @@ Menahaら\cite{gemini2024pill}は，Google Geminiを用いた生成AIベース�
 一方で，同研究は商用クローズドソースモデルを用いたプロンプトベースの手法であり，薬剤画像データを用いてモデル自体をファインチューニングする構成ではない．
 同研究自体がプライバシー上の問題を評価したものではないが，外部API型モデルを利用する構成では薬剤画像を外部サービスに送信するため，ローカル推論と比べてプライバシー保護上の追加対応が必要になる．
 
+Hanら\cite{han2021bpis}は，PTPシートの表面と裏面を撮影し，背景除去，向き補正およびサイズの正規化を行った後，表裏画像を結合してCNNで分類するリアルタイム薬剤識別システムを提案している．この研究は，本研究と同様にPTPシート上の包装および印字情報を薬剤識別に利用する点で関連が深い．一方，専用の表裏撮影装置と複数の画像前処理を必要とする．本研究では，VLMを薬剤画像に特化してファインチューニングすることで，画像と質問文から薬剤名を直接生成する構成を採用する．
+
 以上の課題から，（1）錠剤本体の外観，刻印，包装上の印字など複数の視覚情報を統合した識別，（2）外部APIに過度に依存しないローカル動作の可能性，（3）薬剤画像に特化したファインチューニングによる識別精度の向上，の3点を検討する必要がある．
 
 \subsection{本研究の目的}
 
 本研究では，オープンソースのVLMであるQwen3.5を用い，薬剤画像とテキストプロンプトから薬剤名を出力する薬剤鑑別手法を検討する．
-具体的には，薬剤画像に対して「この錠剤は何という薬ですか」という質問を与え，正解薬剤名を出力するようにLoRA\cite{hu2022lora}（追加学習の一手法．\ref{sec:tech}節）によるファインチューニングを行う．
+具体的には，薬剤画像に対して「この錠剤は何という薬ですか」という質問を与え，正解薬剤名を出力するようにLoRA\cite{hu2022lora}（追加学習の一手法．\ref{sec:lora}節）によるファインチューニングを行う．
 
 本研究の目的は，ファインチューニング前のQwen3.5および外部API型マルチモーダルAIであるGeminiと比較することで，薬剤画像データに特化したファインチューニングが薬剤鑑別精度に与える効果を検証することである．
 また，オープンソースモデルを用いることで，薬剤画像を外部APIに送信せず，適切な計算環境を用意すればローカル環境で推論できる薬剤鑑別システムの可能性を示すことを目指す．
@@ -132,7 +134,7 @@ Menahaら\cite{gemini2024pill}は，Google Geminiを用いた生成AIベース�
 \section{関連研究・関連技術}\label{sec2}
 %----------------------------------------------------------------------
 
-本章では，まず薬剤識別に関する3本の先行研究について各手法の概要と限界を整理し，次に本研究が用いる要素技術（Vision-Language ModelおよびLoRA）に関する研究を述べたうえで，本研究の位置づけを示す．
+本章では，まず薬剤識別に関する4本の先行研究について各手法の概要と限界を整理し，次に本研究が用いる要素技術（Vision-Language ModelおよびLoRA）に関する研究を述べたうえで，本研究の位置づけを示す．
 
 \subsection{画像特徴・刻印文字を用いた薬剤識別手法}
 
@@ -185,6 +187,22 @@ Menahaら\cite{gemini2024pill}は，Google Geminiを用いた生成AIベース�
   \item プロンプトベースの手法であり，当該研究では対象薬剤への追加学習は示されていない．
 \end{itemize}
 
+\subsection{PTPシートの表裏画像を用いた薬剤識別手法}
+
+Hanら\cite{han2021bpis}は，病院薬局における調剤時の薬剤確認を支援するため，Induced Deep Learningに基づくリアルタイムのBlister Package Identification System（BPIS）を提案した．同研究では，PTPシートの表面と裏面を撮影し，背景除去，傾き補正，向きの統一およびサイズの正規化を行った後，表裏画像を結合したRe-oriented Two-sided Image（RTI）を作成する．このRTIをYOLOv2，ResNet-101およびSE-ResNet-101などのCNNに入力し，薬剤を分類する．
+
+同研究では，250種類のPTP包装薬を対象に，各薬剤の表面および裏面を撮影してデータセットを構築した．表裏情報を統合したRTIを用いることで，SE-ResNet-101においてF1スコア99.97\%を報告している．また，2台のカメラとJetson TX2を用いた組込み型のリアルタイム識別システムを構築し，病院環境での運用可能性を示した．
+
+この研究は，PTPシートの包装，印字および錠剤配置などの視覚情報を利用して薬剤を識別する点で，本研究と特に関連が深い．一方，表裏画像を同時に取得する専用撮影装置と，背景除去，向き補正，表裏結合などの前処理を必要とする．本研究では，オープンソースVLMをLoRAによって薬剤画像に特化させ，画像と自然言語プロンプトから薬剤名を直接生成する．また，回転・反転画像，Web収集画像，複数薬剤画像および量子化後のモデルについても評価する点が異なる．
+
+\textbf{課題}
+\begin{itemize}
+  \item PTPシートの表面と裏面を同時に撮影するための専用2カメラ装置が必要である．
+  \item 背景除去，向き補正，透視変換および表裏画像の結合など，複数の前処理を必要とする．
+  \item 主な評価が同一病院および統制された撮影環境で行われており，一般利用者がスマートフォンで撮影した画像や異なる撮影環境への汎化については追加検証が必要である．
+  \item 未知薬剤を既知薬剤と区別して保留する能力については，十分に評価されていない．
+\end{itemize}
+
 \subsection{関連技術：Vision-Language ModelとLoRA}\label{sec:tech}
 
 本節では，前節までの薬剤識別の先行研究に加えて，本研究の提案手法を構成する2つの要素技術に関する研究を整理する．
@@ -199,7 +217,7 @@ Qwen-VLは，画像説明や視覚的質問応答に加えて，画像・キャ�
 本研究で用いるQwen3.5は，これらと同じQwenシリーズのオープンソースVLMとして公開されているモデルである．
 本研究の単剤識別はPTPシート上の印字を読み取る能力を，複数薬剤識別の検出段階（\ref{sec:multi}節）はグラウンディング能力を，それぞれ基盤として利用している．
 
-\subsubsection{LoRAによるパラメータ効率の高いファインチューニング}
+\subsubsection{LoRAによるパラメータ効率の高いファインチューニング}\label{sec:lora}
 
 Huら\cite{hu2022lora}は，事前学習済みモデルの重みを固定したまま，低ランク行列のみを追加学習するファインチューニング手法LoRA（Low-Rank Adaptation）を提案した．
 同研究では，Transformerの注意機構の重み（クエリ射影$W_q$・値射影$W_v$など）にLoRAを適用することで，GPT-3 175Bに対して学習対象パラメータ数を約1万分の1，学習時のGPUメモリ使用量を約3分の1に削減しながら，全パラメータのファインチューニングと同等以上の品質を達成できることが報告されている．
@@ -215,8 +233,9 @@ Heoらの手法は，画像特徴と刻印文字を個別に抽出し，言語�
 一方で，複数の専用モジュールを組み合わせる必要があり，システム構成が複雑である．
 Rádliらの手法は，薬剤画像と薬剤説明テキストを組み合わせる点で本研究と関連するが，画像特徴抽出器とテキスト埋め込みを用いたメトリクス学習であり，薬剤名を直接生成するVLM型の手法ではない．
 Menahaらの手法は，生成AIを薬剤識別支援に用いる点で関連するが，商用モデルを用いたプロンプトベースの手法であり，薬剤画像に特化したファインチューニングを行うものではない．
+Hanらの手法は，PTPシートの表面と裏面を正規化して統合し，高精度なCNN分類を実現している点で，本研究と対象が近い．一方，専用撮影装置と複数の画像前処理を必要とする．本研究では，薬剤画像をVLMへ直接入力し，LoRAによる特化学習を行うことで，より統合的な薬剤名生成方式を検討する．
 
-これらを踏まえ，本研究ではオープンソースのVLMであるQwen3.5（\ref{sec:tech}節）を用い，薬剤画像とテキストプロンプトを入力として薬剤名を直接出力する手法を検討する．
+これらを踏まえ，本研究ではオープンソースのVLMであるQwen3.5（\ref{sec:qwen35}節）を用い，薬剤画像とテキストプロンプトを入力として薬剤名を直接出力する手法を検討する．
 特に，LoRA\cite{hu2022lora}によるファインチューニングを行うことで，薬剤画像データに特化したモデルを構築し，ファインチューニング前のモデルおよび外部API型マルチモーダルAIとの比較を通じて，その有効性を評価する．
 
 表\ref{tab:related}に，先行研究の問題点と本研究での対応を整理して示す．
@@ -246,6 +265,10 @@ Menahaら \cite{gemini2024pill} &
 ゼロショットのみで薬剤画像に特化した追加学習が行われておらず，専門的な薬剤識別への適応が不十分 &
 Menahaら \cite{gemini2024pill} &
 薬剤画像と正解薬剤名のペアを用いてLoRAファインチューニングを行い，識別精度を向上させる \\
+\hline
+表裏を同時に取得する専用撮影装置と，背景除去・向き補正・画像結合などの前処理を必要とする &
+Hanら \cite{han2021bpis} &
+VLMへ薬剤画像を入力して薬剤名を直接生成し，専用の表裏同時撮影装置を必須としない．回転・反転画像および異なる出典のWeb画像でも評価する \\
 \hline
 \end{tabular}
 \end{table}
@@ -327,12 +350,12 @@ Top-1 Accuracy（学習・評価データ分離）でGeminiのゼロショット
   \item \textbf{残課題}：回転・反転への対策は学習データの拡張強化によって99.8\%まで改善した．一方，学習対象外の未知薬剤への対応は，ホワイトリスト方式の予備実験（\ref{sec:unknown}節）で未知薬剤17枚中12枚の保留にとどまっており，確信度に基づく保留機構の導入が必要である．また，実写の複数薬剤画像およびスマートフォン実機での検証は未実施である．
 \end{itemize}
 
-\subsection{使用モデル：Qwen3.5}
+\subsection{使用モデル：Qwen3.5}\label{sec:qwen35}
 
 本研究では，画像とテキストを入力できるオープンソースのVLMとしてQwen3.5を使用する．
-Qwen3.5は，Qwen-VL\cite{bai2023qwenvl}に始まりQwen3-VL\cite{qwen3vl2025}へと発展してきたQwenシリーズVLMと同系列のモデルであり，0.8B/2B/4Bなど複数のパラメータ規模で公開されている（\ref{sec:tech}節）．
+Qwen3.5は，Qwen-VL\cite{bai2023qwenvl}に始まりQwen3-VL\cite{qwen3vl2025}へと発展してきたQwenシリーズVLMと同系列のモデルであり，0.8B/2B/4Bなど複数のパラメータ規模で公開されている．モデルサイズによる精度および計算量の違いについては，\ref{sec:light}節および\ref{sec:quant_real}節で評価する．
 Qwen3.5を選定する理由は，外部APIに依存せずローカル環境で動作させられる可能性があり，LoRAなどのパラメータ効率の高い手法によって追加学習が可能であるためである．
-また，同系列のVLMは画像中の文字読み取りとグラウンディングを学習しており\cite{bai2023qwenvl}，PTPシートの印字を重要な手がかりとする薬剤鑑別と親和性が高い．
+また，同系列のVLMは画像中の文字読み取りとグラウンディング能力を備えており\cite{bai2023qwenvl}\cite{qwen3vl2025}，PTPシートの印字を重要な手がかりとする薬剤鑑別と親和性が高い．
 
 VLMは画像とテキストプロンプトを同時に入力できるため，薬剤画像に対する質問応答形式で薬剤名を出力するタスクを構成できる．
 本研究では，この特性を利用し，薬剤画像から薬剤名を出力するようにQwen3.5をLoRAによりファインチューニングする．
@@ -2038,11 +2061,11 @@ R. Menaha, R. Abilaash, P. N. Mohanram, A. Unnikrishnan, and S. Sukumar,
 in \textit{2024 International Conference on Emerging Research in Computational Science (ICERCS)}, pp.~1--5, 2024．
 \url{https://doi.org/10.1109/ICERCS63125.2024.10895371}．
 
-\bibitem{hu2022lora}
-Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen,
-``LoRA: Low-Rank Adaptation of Large Language Models,''
-in \textit{Proceedings of the 10th International Conference on Learning Representations (ICLR)}, 2022．
-\url{https://arxiv.org/abs/2106.09685}．
+\bibitem{han2021bpis}
+Yun Han, Sheng-Luen Chung, Qiang Xiao, Jing-Syuan Wang, and Shun-Feng Su,
+``Pharmaceutical Blister Package Identification Based on Induced Deep Learning,''
+\textit{IEEE Access}, Vol.~9, pp.~101344--101356, 2021．
+\url{https://doi.org/10.1109/ACCESS.2021.3097181}．
 
 \bibitem{bai2023qwenvl}
 Jinze Bai, Shuai Bai, Shusheng Yang, Shijie Wang, Sinan Tan, Peng Wang, Junyang Lin, Chang Zhou, and Jingren Zhou,
@@ -2055,6 +2078,12 @@ Qwen Team,
 ``Qwen3-VL Technical Report,''
 arXiv preprint arXiv:2511.21631, 2025．
 \url{https://arxiv.org/abs/2511.21631}．
+
+\bibitem{hu2022lora}
+Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen,
+``LoRA: Low-Rank Adaptation of Large Language Models,''
+in \textit{Proceedings of the 10th International Conference on Learning Representations (ICLR)}, 2022．
+\url{https://arxiv.org/abs/2106.09685}．
 \end{thebibliography}
 
 \end{document}
