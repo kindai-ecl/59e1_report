@@ -10,7 +10,7 @@
 \contentsline {subsection}{\numberline {2.5}関連技術：Vision-Language ModelとLoRA}{6}{}%
 \contentsline {subsubsection}{\numberline {2.5.1}Qwen-VL系列のVision-Language Model}{6}{}%
 \contentsline {subsubsection}{\numberline {2.5.2}LoRAによるパラメータ効率の高いファインチューニング}{6}{}%
-\contentsline {subsection}{\numberline {2.6}先行研究の整理と本研究の位置づけ}{6}{}%
+\contentsline {subsection}{\numberline {2.6}先行研究の整理と本研究の位置づけ}{7}{}%
 \contentsline {section}{\numberline {3}提案手法}{8}{}%
 \contentsline {subsection}{\numberline {3.1}研究テーマの整理}{8}{}%
 \contentsline {subsection}{\numberline {3.2}解決策の妥当性}{9}{}%
@@ -21,71 +21,71 @@
 \contentsline {subsection}{\numberline {3.6}比較手法}{13}{}%
 \contentsline {subsection}{\numberline {3.7}使用データ}{13}{}%
 \contentsline {subsection}{\numberline {3.8}評価方法}{13}{}%
-\contentsline {subsubsection}{\numberline {3.8.1}単一薬剤識別の評価指標}{13}{}%
+\contentsline {subsubsection}{\numberline {3.8.1}単一薬剤識別の評価指標}{14}{}%
 \contentsline {subsubsection}{\numberline {3.8.2}複数薬剤同時識別の評価指標}{14}{}%
-\contentsline {subsubsection}{\numberline {3.8.3}統計的検定}{14}{}%
-\contentsline {subsection}{\numberline {3.9}実験計画}{14}{}%
+\contentsline {subsubsection}{\numberline {3.8.3}統計的検定}{15}{}%
+\contentsline {subsection}{\numberline {3.9}実験計画}{15}{}%
 \contentsline {section}{\numberline {4}実験と結果}{16}{}%
 \contentsline {subsection}{\numberline {4.1}実験環境}{16}{}%
-\contentsline {subsection}{\numberline {4.2}データセットの構築}{17}{}%
-\contentsline {subsubsection}{\numberline {4.2.1}元画像の撮影}{17}{}%
+\contentsline {subsection}{\numberline {4.2}データセットの構築}{16}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}元画像の撮影}{16}{}%
 \contentsline {subsubsection}{\numberline {4.2.2}学習・評価分割}{17}{}%
 \contentsline {subsubsection}{\numberline {4.2.3}データ拡張}{18}{}%
 \contentsline {subsubsection}{\numberline {4.2.4}拡張なし評価画像}{18}{}%
-\contentsline {subsection}{\numberline {4.3}学習設定}{18}{}%
+\contentsline {subsection}{\numberline {4.3}学習設定}{19}{}%
 \contentsline {subsection}{\numberline {4.4}評価手順}{20}{}%
 \contentsline {subsection}{\numberline {4.5}予備実験（単一薬剤メインテート錠）}{20}{}%
 \contentsline {subsubsection}{\numberline {4.5.1}出力形式・方式の比較}{20}{}%
 \contentsline {subsubsection}{\numberline {4.5.2}拡張データセットでの学習と評価}{21}{}%
-\contentsline {subsection}{\numberline {4.6}初期検討：データ拡張なしでの全薬剤学習}{21}{}%
+\contentsline {subsection}{\numberline {4.6}初期検討：データ拡張なしでの全薬剤学習}{22}{}%
 \contentsline {subsection}{\numberline {4.7}単一薬剤識別の結果（本実験）}{22}{}%
 \contentsline {subsection}{\numberline {4.8}外部画像での汎化（予備的検証）}{24}{}%
-\contentsline {subsection}{\numberline {4.9}複数薬剤同時識別の結果}{24}{}%
-\contentsline {subsubsection}{\numberline {4.9.1}評価データの作成}{24}{}%
+\contentsline {subsection}{\numberline {4.9}複数薬剤同時識別の結果}{25}{}%
+\contentsline {subsubsection}{\numberline {4.9.1}評価データの作成}{25}{}%
 \contentsline {subsubsection}{\numberline {4.9.2}一括質問方式の失敗}{25}{}%
 \contentsline {subsubsection}{\numberline {4.9.3}検出→単剤分類方式の結果と3者比較}{25}{}%
 \contentsline {subsection}{\numberline {4.10}検出器の専用学習による改善}{26}{}%
 \contentsline {subsubsection}{\numberline {4.10.1}評価セットと正解bbox基準値による診断}{26}{}%
 \contentsline {subsubsection}{\numberline {4.10.2}検出器LoRAの学習}{26}{}%
-\contentsline {subsubsection}{\numberline {4.10.3}検出器差し替え後の再評価}{26}{}%
+\contentsline {subsubsection}{\numberline {4.10.3}検出器差し替え後の再評価}{27}{}%
 \contentsline {subsubsection}{\numberline {4.10.4}過検出抑制の追加検討（負の結果）}{27}{}%
-\contentsline {subsection}{\numberline {4.11}軽量化の評価（量子化・モデルサイズ）}{27}{}%
+\contentsline {subsection}{\numberline {4.11}軽量化の評価（量子化・モデルサイズ）}{28}{}%
 \contentsline {subsection}{\numberline {4.12}Geminiによる拡張前の元画像287枚の評価}{29}{}%
 \contentsline {paragraph}{入力・条件}{29}{}%
-\contentsline {paragraph}{結果}{29}{}%
+\contentsline {paragraph}{結果}{30}{}%
 \contentsline {subsection}{\numberline {4.13}Web収集画像での汎化評価}{30}{}%
 \contentsline {paragraph}{入力・条件}{30}{}%
-\contentsline {paragraph}{結果}{30}{}%
-\contentsline {subsection}{\numberline {4.14}回転・反転への対策}{31}{}%
-\contentsline {paragraph}{(a) 拡張強化による再学習}{31}{}%
-\contentsline {paragraph}{(b) 向き補正前処理（再学習なし）}{31}{}%
+\contentsline {paragraph}{結果}{31}{}%
+\contentsline {subsection}{\numberline {4.14}回転・反転への対策}{32}{}%
+\contentsline {paragraph}{(a) 拡張強化による再学習}{32}{}%
+\contentsline {paragraph}{(b) 向き補正前処理（再学習なし）}{32}{}%
 \contentsline {subsection}{\numberline {4.15}学習枚数の感度分析（few-shot曲線）と表裏・錠数の効果}{32}{}%
 \contentsline {subsubsection}{\numberline {4.15.1}実験条件}{32}{}%
-\contentsline {subsubsection}{\numberline {4.15.2}学習枚数の比較}{32}{}%
-\contentsline {subsubsection}{\numberline {4.15.3}表裏および錠数の分析}{32}{}%
+\contentsline {subsubsection}{\numberline {4.15.2}学習枚数の比較}{33}{}%
+\contentsline {subsubsection}{\numberline {4.15.3}表裏および錠数の分析}{33}{}%
 \contentsline {subsection}{\numberline {4.16}データ拡張倍率の対照実験}{34}{}%
 \contentsline {subsection}{\numberline {4.17}量子化・モデルサイズの実画像（拡張なし）評価}{35}{}%
 \contentsline {subsection}{\numberline {4.18}データ分割の妥当性検証（リーク監査）}{35}{}%
 \contentsline {paragraph}{入力・処理}{35}{}%
-\contentsline {paragraph}{結果}{35}{}%
-\contentsline {subsection}{\numberline {4.19}5分割交差検証による頑健性の確認}{35}{}%
+\contentsline {paragraph}{結果}{36}{}%
+\contentsline {subsection}{\numberline {4.19}5分割交差検証による頑健性の確認}{36}{}%
 \contentsline {paragraph}{入力・条件}{36}{}%
 \contentsline {paragraph}{結果}{36}{}%
-\contentsline {paragraph}{Geminiとの同一画像での直接比較}{36}{}%
+\contentsline {paragraph}{Geminiとの同一画像での直接比較}{37}{}%
 \contentsline {subsection}{\numberline {4.20}評価時拡張の多数決（TTA）の検討}{37}{}%
-\contentsline {subsection}{\numberline {4.21}主要な比較の統計検定（McNemar検定と95\%信頼区間）}{37}{}%
-\contentsline {paragraph}{拡張のない元画像287枚での3者比較}{37}{}%
+\contentsline {subsection}{\numberline {4.21}主要な比較の統計検定（McNemar検定と95\%信頼区間）}{38}{}%
+\contentsline {paragraph}{拡張のない元画像287枚での3者比較}{38}{}%
 \contentsline {paragraph}{拡張画像814枚での3者比較}{38}{}%
 \contentsline {subsection}{\numberline {4.22}推論ベンチマーク（メモリ・速度）}{38}{}%
-\contentsline {subsection}{\numberline {4.23}根拠説明文の生成可否}{38}{}%
+\contentsline {subsection}{\numberline {4.23}根拠説明文の生成可否}{39}{}%
 \contentsline {subsection}{\numberline {4.24}未知薬剤に対する保留の予備実験（ホワイトリスト方式）}{39}{}%
 \contentsline {paragraph}{方式}{39}{}%
 \contentsline {paragraph}{入力・条件}{39}{}%
-\contentsline {paragraph}{結果}{39}{}%
-\contentsline {paragraph}{考察}{39}{}%
-\contentsline {subsection}{\numberline {4.25}考察}{39}{}%
-\contentsline {section}{\numberline {5}結論・今後の課題}{41}{}%
-\contentsline {subsection}{\numberline {5.1}結論}{41}{}%
-\contentsline {subsection}{\numberline {5.2}今後の課題}{42}{}%
-\contentsline {section}{謝辞}{43}{}%
-\contentsline {section}{参考文献}{44}{}%
+\contentsline {paragraph}{結果}{40}{}%
+\contentsline {paragraph}{考察}{40}{}%
+\contentsline {subsection}{\numberline {4.25}考察}{40}{}%
+\contentsline {section}{\numberline {5}結論・今後の課題}{42}{}%
+\contentsline {subsection}{\numberline {5.1}結論}{42}{}%
+\contentsline {subsection}{\numberline {5.2}今後の課題}{43}{}%
+\contentsline {section}{謝辞}{44}{}%
+\contentsline {section}{参考文献}{45}{}%
