@@ -1,90 +1,64 @@
 \contentsline {section}{\numberline {1}序論}{1}{}%
-\contentsline {subsection}{\numberline {1.1}本研究の背景}{1}{}%
-\contentsline {subsection}{\numberline {1.2}本研究の目的}{2}{}%
-\contentsline {subsection}{\numberline {1.3}本報告書の構成}{2}{}%
-\contentsline {section}{\numberline {2}関連研究・関連技術}{3}{}%
-\contentsline {subsection}{\numberline {2.1}画像特徴・刻印文字を用いた薬剤識別手法}{3}{}%
-\contentsline {subsection}{\numberline {2.2}画像特徴とテキスト特徴を用いたマルチモーダル薬剤識別手法}{3}{}%
-\contentsline {subsection}{\numberline {2.3}生成AI・LLMを用いた薬剤識別支援手法}{4}{}%
-\contentsline {subsection}{\numberline {2.4}関連技術：Vision-Language ModelとLoRA}{4}{}%
-\contentsline {subsubsection}{\numberline {2.4.1}Qwen-VL系列のVision-Language Model}{4}{}%
-\contentsline {subsubsection}{\numberline {2.4.2}LoRAによるパラメータ効率の高いファインチューニング}{5}{}%
-\contentsline {subsection}{\numberline {2.5}先行研究の整理と本研究の位置づけ}{5}{}%
-\contentsline {section}{\numberline {3}提案手法}{6}{}%
-\contentsline {subsection}{\numberline {3.1}研究テーマの整理}{6}{}%
-\contentsline {subsection}{\numberline {3.2}解決策の妥当性}{7}{}%
-\contentsline {subsection}{\numberline {3.3}使用モデル：Qwen3.5}{8}{}%
-\contentsline {subsection}{\numberline {3.4}提案手法：Qwen3.5 の LoRA ファインチューニング}{8}{}%
-\contentsline {subsubsection}{\numberline {3.4.1}LoRAによる追加学習}{8}{}%
-\contentsline {subsection}{\numberline {3.5}複数薬剤同時識別への拡張：検出→単剤分類}{9}{}%
-\contentsline {subsection}{\numberline {3.6}比較手法}{11}{}%
-\contentsline {subsection}{\numberline {3.7}使用データ}{11}{}%
-\contentsline {subsection}{\numberline {3.8}評価方法}{12}{}%
-\contentsline {subsubsection}{\numberline {3.8.1}単一薬剤識別の評価指標}{12}{}%
-\contentsline {subsubsection}{\numberline {3.8.2}複数薬剤同時識別の評価指標}{12}{}%
-\contentsline {subsubsection}{\numberline {3.8.3}統計的検定}{13}{}%
-\contentsline {subsection}{\numberline {3.9}実験計画}{13}{}%
-\contentsline {section}{\numberline {4}実験と結果}{14}{}%
-\contentsline {subsection}{\numberline {4.1}実験環境}{14}{}%
-\contentsline {subsection}{\numberline {4.2}データセットの構築}{14}{}%
-\contentsline {subsubsection}{\numberline {4.2.1}元画像の撮影}{14}{}%
-\contentsline {subsubsection}{\numberline {4.2.2}学習・評価分割}{15}{}%
-\contentsline {subsubsection}{\numberline {4.2.3}データ拡張}{16}{}%
-\contentsline {subsubsection}{\numberline {4.2.4}拡張なし評価画像}{16}{}%
-\contentsline {subsection}{\numberline {4.3}学習設定}{17}{}%
-\contentsline {subsection}{\numberline {4.4}評価手順}{18}{}%
-\contentsline {subsection}{\numberline {4.5}予備実験（単一薬剤メインテート錠）}{18}{}%
-\contentsline {subsubsection}{\numberline {4.5.1}出力形式・方式の比較}{18}{}%
-\contentsline {subsubsection}{\numberline {4.5.2}拡張データセットでの学習と評価}{19}{}%
-\contentsline {subsection}{\numberline {4.6}初期検討：データ拡張なしでの全薬剤学習}{19}{}%
-\contentsline {subsection}{\numberline {4.7}単一薬剤識別の結果（本実験）}{20}{}%
-\contentsline {subsection}{\numberline {4.8}外部画像での汎化（予備的検証）}{22}{}%
-\contentsline {subsection}{\numberline {4.9}複数薬剤同時識別の結果}{22}{}%
-\contentsline {subsubsection}{\numberline {4.9.1}評価データの作成}{22}{}%
-\contentsline {subsubsection}{\numberline {4.9.2}一括質問方式の失敗}{23}{}%
-\contentsline {subsubsection}{\numberline {4.9.3}検出→単剤分類方式の結果と3者比較}{23}{}%
-\contentsline {subsection}{\numberline {4.10}検出器の専用学習による改善}{24}{}%
-\contentsline {subsubsection}{\numberline {4.10.1}評価セットと正解bbox基準値による診断}{24}{}%
-\contentsline {subsubsection}{\numberline {4.10.2}検出器LoRAの学習}{24}{}%
-\contentsline {subsubsection}{\numberline {4.10.3}検出器差し替え後の再評価}{25}{}%
-\contentsline {subsubsection}{\numberline {4.10.4}過検出抑制の追加検討（負の結果）}{25}{}%
-\contentsline {subsection}{\numberline {4.11}軽量化の評価（量子化・モデルサイズ）}{26}{}%
-\contentsline {subsection}{\numberline {4.12}Geminiによる拡張前の元画像287枚の評価}{27}{}%
-\contentsline {paragraph}{入力・条件}{27}{}%
-\contentsline {paragraph}{結果}{28}{}%
-\contentsline {subsection}{\numberline {4.13}Web収集画像での汎化評価}{28}{}%
-\contentsline {paragraph}{入力・条件}{28}{}%
-\contentsline {paragraph}{結果}{28}{}%
-\contentsline {subsection}{\numberline {4.14}回転・反転への対策}{29}{}%
-\contentsline {paragraph}{(a) 拡張強化による再学習}{29}{}%
-\contentsline {paragraph}{(b) 向き補正前処理（再学習なし）}{30}{}%
-\contentsline {subsection}{\numberline {4.15}学習枚数の感度分析（few-shot曲線）と表裏・錠数の効果}{30}{}%
-\contentsline {subsubsection}{\numberline {4.15.1}実験条件}{30}{}%
-\contentsline {subsubsection}{\numberline {4.15.2}学習枚数の比較}{30}{}%
-\contentsline {subsubsection}{\numberline {4.15.3}表裏および錠数の分析}{31}{}%
-\contentsline {subsection}{\numberline {4.16}データ拡張倍率の対照実験}{32}{}%
-\contentsline {subsection}{\numberline {4.17}量子化・モデルサイズの実画像（拡張なし）評価}{33}{}%
-\contentsline {subsection}{\numberline {4.18}データ分割の妥当性検証（リーク監査）}{33}{}%
-\contentsline {paragraph}{入力・処理}{33}{}%
-\contentsline {paragraph}{結果}{33}{}%
-\contentsline {subsection}{\numberline {4.19}5分割交差検証による頑健性の確認}{34}{}%
-\contentsline {paragraph}{入力・条件}{34}{}%
-\contentsline {paragraph}{結果}{34}{}%
-\contentsline {paragraph}{Geminiとの同一画像での直接比較}{34}{}%
-\contentsline {subsection}{\numberline {4.20}評価時拡張の多数決（TTA）の検討}{35}{}%
-\contentsline {subsection}{\numberline {4.21}主要な比較の統計検定（McNemar検定と95\%信頼区間）}{35}{}%
-\contentsline {paragraph}{拡張のない元画像287枚での3者比較}{35}{}%
-\contentsline {paragraph}{拡張画像814枚での3者比較}{36}{}%
-\contentsline {subsection}{\numberline {4.22}推論ベンチマーク（メモリ・速度）}{36}{}%
-\contentsline {subsection}{\numberline {4.23}根拠説明文の生成可否}{36}{}%
-\contentsline {subsection}{\numberline {4.24}未知薬剤に対する保留の予備実験（ホワイトリスト方式）}{37}{}%
-\contentsline {paragraph}{方式}{37}{}%
-\contentsline {paragraph}{入力・条件}{37}{}%
-\contentsline {paragraph}{結果}{37}{}%
-\contentsline {paragraph}{考察}{37}{}%
-\contentsline {subsection}{\numberline {4.25}考察}{37}{}%
-\contentsline {section}{\numberline {5}結論・今後の課題}{39}{}%
-\contentsline {subsection}{\numberline {5.1}結論}{39}{}%
-\contentsline {subsection}{\numberline {5.2}今後の課題}{40}{}%
-\contentsline {section}{謝辞}{41}{}%
-\contentsline {section}{参考文献}{42}{}%
+\contentsline {subsection}{\numberline {1.1}研究背景}{1}{}%
+\contentsline {subsection}{\numberline {1.2}研究課題}{1}{}%
+\contentsline {subsection}{\numberline {1.3}研究目的と提案}{1}{}%
+\contentsline {subsection}{\numberline {1.4}本報告書の構成}{2}{}%
+\contentsline {section}{\numberline {2}関連研究・関連技術}{4}{}%
+\contentsline {subsection}{\numberline {2.1}薬剤画像の認識}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Vision-Language Modelとマルチモーダル\mbox {LLM}}{4}{}%
+\contentsline {subsection}{\numberline {2.3}LoRAとQLoRA}{5}{}%
+\contentsline {subsection}{\numberline {2.4}画像拡張の関連技術}{5}{}%
+\contentsline {subsection}{\numberline {2.5}未知入力の検出と選択的分類}{5}{}%
+\contentsline {subsection}{\numberline {2.6}本研究の位置付け}{5}{}%
+\contentsline {section}{\numberline {3}提案手法}{7}{}%
+\contentsline {subsection}{\numberline {3.1}処理の全体像}{7}{}%
+\contentsline {subsection}{\numberline {3.2}薬剤クラスの定義}{7}{}%
+\contentsline {subsection}{\numberline {3.3}収集画像の由来監査}{8}{}%
+\contentsline {subsection}{\numberline {3.4}RTIと部分画像の生成}{8}{}%
+\contentsline {subsection}{\numberline {3.5}画像拡張}{10}{}%
+\contentsline {subsection}{\numberline {3.6}LoRA学習}{11}{}%
+\contentsline {subsection}{\numberline {3.7}評価方法}{12}{}%
+\contentsline {subsubsection}{\numberline {3.7.1}内部開発評価集合}{12}{}%
+\contentsline {subsubsection}{\numberline {3.7.2}保存済みLoRA非適用パイプラインとの参照比較}{13}{}%
+\contentsline {subsubsection}{\numberline {3.7.3}外部サービスとの対応比較}{14}{}%
+\contentsline {subsubsection}{\numberline {3.7.4}合成複数薬剤画像}{14}{}%
+\contentsline {subsubsection}{\numberline {3.7.5}信頼ゲート}{15}{}%
+\contentsline {section}{\numberline {4}実験結果・考察}{18}{}%
+\contentsline {subsection}{\numberline {4.1}実験環境とデータ監査結果}{18}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}実験環境と撮影記録}{18}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}データおよび監査結果}{19}{}%
+\contentsline {subsection}{\numberline {4.2}初期実画像方式と収集画像学習への移行}{20}{}%
+\contentsline {subsection}{\numberline {4.3}収集画像学習ver1からver3}{21}{}%
+\contentsline {subsection}{\numberline {4.4}収集画像学習ver4（条件AからDの比較）}{21}{}%
+\contentsline {subsection}{\numberline {4.5}収集画像学習ver5}{25}{}%
+\contentsline {subsection}{\numberline {4.6}収集画像学習ver6（LoRA容量の探索的追試）}{25}{}%
+\contentsline {subsection}{\numberline {4.7}ver6の内部開発評価集合による評価}{26}{}%
+\contentsline {subsection}{\numberline {4.8}保存済みLoRA非適用パイプラインとの参照比較}{28}{}%
+\contentsline {subsection}{\numberline {4.9}Gemini 3.5 Flashとの対応比較}{29}{}%
+\contentsline {subsection}{\numberline {4.10}ver6の合成複数薬剤画像評価}{29}{}%
+\contentsline {subsection}{\numberline {4.11}収集画像学習ver7（探索的追加実験）}{30}{}%
+\contentsline {subsection}{\numberline {4.12}黒い区切りのない合成画像による予備評価}{31}{}%
+\contentsline {subsubsection}{\numberline {4.12.1}ver3入力素材を用いた領域抽出だけの評価}{31}{}%
+\contentsline {subsubsection}{\numberline {4.12.2}元写真タイルを用いたver6・ver7の検出後識別}{33}{}%
+\contentsline {subsection}{\numberline {4.13}条件Cの信頼ゲート評価}{34}{}%
+\contentsline {subsection}{\numberline {4.14}総合考察}{35}{}%
+\contentsline {subsection}{\numberline {4.15}妥当性の限界}{36}{}%
+\contentsline {section}{\numberline {5}結論・今後の課題}{37}{}%
+\contentsline {subsection}{\numberline {5.1}結論}{37}{}%
+\contentsline {subsection}{\numberline {5.2}追加実験の優先順位}{38}{}%
+\contentsline {subsection}{\numberline {5.3}薬剤部での追加撮影計画}{38}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}既存41クラスの独立確認}{38}{}%
+\contentsline {subsubsection}{\numberline {5.3.2}新規薬剤クラスへの拡張}{38}{}%
+\contentsline {subsection}{\numberline {5.4}複数薬剤の精度向上}{39}{}%
+\contentsline {subsection}{\numberline {5.5}信頼ゲートの完成}{39}{}%
+\contentsline {section}{謝辞}{40}{}%
+\contentsline {section}{\numberline {付録A}再現資料とリポジトリ}{41}{}%
+\contentsline {subsection}{\numberline {A.1}READMEとデータ可用性}{41}{}%
+\contentsline {subsection}{\numberline {A.2}本文に記載した全実験・評価・計画の対応}{43}{}%
+\contentsline {subsection}{\numberline {A.3}収集画像の由来監査記録}{47}{}%
+\contentsline {subsection}{\numberline {A.4}保存済みLoRA非適用パイプラインの詳細}{47}{}%
+\contentsline {subsection}{\numberline {A.5}薬剤クラスの凍結対応表}{47}{}%
+\contentsline {subsection}{\numberline {A.6}内部開発評価集合のクラス別内訳}{48}{}%
+\contentsline {subsection}{\numberline {A.7}主条件Dの保存物と再現条件}{48}{}%
+\contentsline {subsection}{\numberline {A.8}探索的追試ver6の実行手順}{49}{}%
+\contentsline {section}{参考文献}{51}{}%
