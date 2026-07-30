@@ -1,0 +1,176 @@
+\begin{thebibliography}{10}
+
+\bibitem{who_medication}
+{World Health Organization}.
+\newblock {Medication Without Harm}.
+\newblock \url{https://www.who.int/initiatives/medication-without-harm}, 2017.
+\newblock 最終閲覧日：2026年7月25日.
+
+\bibitem{jcqhc_hiyari}
+日本医療機能評価機構.
+\newblock 薬局ヒヤリ・ハット事例収集・分析事業 2024年年報.
+\newblock
+  \url{https://www.yakkyoku-hiyari.jcqhc.or.jp/pdf/year_report_2024.pdf}, 2025.
+\newblock 最終閲覧日：2026年7月25日.
+
+\bibitem{jcqhc_similarity}
+日本医療機能評価機構.
+\newblock
+  薬局ヒヤリ・ハット事例収集・分析事業 第34回報告書：内服薬の取り違えに関する事例―外観の類似に関連した事例―.
+\newblock
+  \url{https://www.yakkyoku-hiyari.jcqhc.or.jp/pdf/report_2025_2_T001.pdf},
+  2026.
+\newblock 最終閲覧日：2026年7月27日.
+
+\bibitem{suetsugu2026ai}
+末次王卓, 金澤直子, 正門佳法, 天達菜緒, 副田雪乃,
+  屋地慶子, 寺薗英之.
+\newblock
+  {AI}画像解析錠剤識別システムの使用による持参薬錠剤一包化鑑別作業の効率化と薬剤助手へのタスク・シフト／タスク・シェアに関する評価.
+\newblock 医療薬学, Vol.~52, No.~5, pp. 273--281, 2026.
+\newblock
+  \url{https://doi.org/10.5649/jjphcs.52.273}，最終閲覧日：2026年7月25日.
+
+\bibitem{heo2023pill}
+Junyeong Heo, Youjin Kang, SangKeun Lee, Dong-Hwa Jeong, and Kang-Min Kim.
+\newblock An accurate deep learning-based system for automatic pill
+  identification: Model development and validation.
+\newblock {\em Journal of Medical Internet Research}, Vol.~25, p. e41043, 2023.
+\newblock
+  \url{https://doi.org/10.2196/41043}，最終閲覧日：2026年7月25日.
+
+\bibitem{radli2024word}
+Rich{\'a}rd R{\'a}dli, Zsolt V{\"o}r{\"o}sh{\'a}zi, and L{\'a}szl{\'o}
+  Cz{\'u}ni.
+\newblock Word and image embeddings in pill recognition.
+\newblock In {\em Proceedings of the 19th International Joint Conference on
+  Computer Vision, Imaging and Computer Graphics Theory and Applications,
+  Volume 3: VISAPP}, pp. 729--736, 2024.
+\newblock
+  \url{https://doi.org/10.5220/0012460800003660}，最終閲覧日：2026年7月25日.
+
+\bibitem{radli2024metric}
+Rich{\'a}rd R{\'a}dli, Zsolt V{\"o}r{\"o}sh{\'a}zi, and L{\'a}szl{\'o}
+  Cz{\'u}ni.
+\newblock Metric-based pill recognition with the help of textual and visual
+  cues.
+\newblock {\em IET Image Processing}, Vol.~18, No.~14, pp. 4623--4638, 2024.
+\newblock
+  \url{https://doi.org/10.1049/ipr2.13273}，最終閲覧日：2026年7月25日.
+
+\bibitem{shorten2019augmentation}
+Connor Shorten and Taghi~M. Khoshgoftaar.
+\newblock A survey on image data augmentation for deep learning.
+\newblock {\em Journal of Big Data}, 2019.
+\newblock 第6巻，記事番号：{Article}
+  60，\url{https://doi.org/10.1186/s40537-019-0197-0}，最終閲覧日：2026年7月25日.
+
+\bibitem{menaha2024gemini}
+R.~Menaha, R.~Abilaash, P.~N. Mohanram, A.~Unnikrishnan, and S.~Sukumar.
+\newblock Drug pills identification system using {Google Gemini} {LLM}: A
+  generative {AI} approach.
+\newblock In {\em 2024 International Conference on Emerging Research in
+  Computational Science}, pp. 1--5, 2024.
+\newblock
+  \url{https://doi.org/10.1109/ICERCS63125.2024.10895371}，最終閲覧日：2026年7月25日.
+
+\bibitem{han2021blister}
+Yun Han, Sheng-Luen Chung, Qiang Xiao, Jing-Syuan Wang, and Shun-Feng Su.
+\newblock Pharmaceutical blister package identification based on induced deep
+  learning.
+\newblock {\em IEEE Access}, Vol.~9, pp. 101344--101356, 2021.
+\newblock
+  \url{https://doi.org/10.1109/ACCESS.2021.3097181}，最終閲覧日：2026年7月26日.
+
+\bibitem{bai2023qwenvl}
+Jinze Bai, Shuai Bai, Shusheng Yang, Shijie Wang, Sinan Tan, Peng Wang, Junyang
+  Lin, Chang Zhou, and Jingren Zhou.
+\newblock {Qwen-VL}: A versatile vision-language model for understanding,
+  localization, text reading, and beyond.
+\newblock {\em arXiv preprint arXiv:2308.12966}, 2023.
+\newblock
+  \url{https://arxiv.org/abs/2308.12966}，最終閲覧日：2026年7月25日.
+
+\bibitem{qwen3vl2025}
+Shuai Bai, Yuxuan Cai, Ruizhe Chen, Keqin Chen, Xionghui Chen, Zesen Cheng,
+  Lianghao Deng, Wei Ding, Chang Gao, Chunjiang Ge, Wenbin Ge, Zhifang Guo,
+  Qidong Huang, Jie Huang, Fei Huang, Binyuan Hui, Shutong Jiang, Zhaohai Li,
+  Mingsheng Li, Mei Li, Kaixin Li, Zicheng Lin, Junyang Lin, Xuejing Liu,
+  Jiawei Liu, Chenglong Liu, Yang Liu, Dayiheng Liu, Shixuan Liu, Dunjie Lu,
+  Ruilin Luo, Chenxu Lv, Rui Men, Lingchen Meng, Xuancheng Ren, Xingzhang Ren,
+  Sibo Song, Yuchong Sun, Jun Tang, Jianhong Tu, Jianqiang Wan, Peng Wang,
+  Pengfei Wang, Qiuyue Wang, Yuxuan Wang, Tianbao Xie, Yiheng Xu, Haiyang Xu,
+  Jin Xu, Zhibo Yang, Mingkun Yang, Jianxin Yang, An~Yang, Bowen Yu, Fei Zhang,
+  Hang Zhang, Xi~Zhang, Bo~Zheng, Humen Zhong, Jingren Zhou, Fan Zhou, Jing
+  Zhou, Yuanzhi Zhu, and Ke~Zhu.
+\newblock {Qwen3-VL} technical report.
+\newblock {\em arXiv preprint arXiv:2511.21631}, 2025.
+\newblock
+  \url{https://arxiv.org/abs/2511.21631}，最終閲覧日：2026年7月25日.
+
+\bibitem{qwen35model}
+{Qwen Team}.
+\newblock {Qwen3.5-4B} model card.
+\newblock \url{https://huggingface.co/Qwen/Qwen3.5-4B}, 2026.
+\newblock
+  使用リビジョン：851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a，最終閲覧日：2026年7月27日.
+
+\bibitem{hu2022lora}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
+  Wang, Lu~Wang, and Weizhu Chen.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock In {\em Proceedings of the 10th International Conference on Learning
+  Representations}, 2022.
+\newblock
+  \url{https://arxiv.org/abs/2106.09685}，最終閲覧日：2026年7月25日.
+
+\bibitem{dettmers2023qlora}
+Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, and Luke Zettlemoyer.
+\newblock {QLoRA}: Efficient finetuning of quantized {LLM}s.
+\newblock In {\em Advances in Neural Information Processing Systems}, Vol.~36,
+  2023.
+\newblock
+  \url{https://arxiv.org/abs/2305.14314}，最終閲覧日：2026年7月25日.
+
+\bibitem{hendrycks2017ood}
+Dan Hendrycks and Kevin Gimpel.
+\newblock A baseline for detecting misclassified and out-of-distribution
+  examples in neural networks.
+\newblock In {\em Proceedings of the 5th International Conference on Learning
+  Representations}, 2017.
+\newblock
+  \url{https://arxiv.org/abs/1610.02136}，最終閲覧日：2026年7月25日.
+
+\bibitem{geifman2017selective}
+Yonatan Geifman and Ran El-Yaniv.
+\newblock Selective classification for deep neural networks.
+\newblock In {\em Advances in Neural Information Processing Systems}, Vol.~30,
+  2017.
+\newblock
+  \url{https://arxiv.org/abs/1705.08500}，最終閲覧日：2026年7月25日.
+
+\bibitem{novartis_entresto_document}
+ノバルティスファーマ株式会社.
+\newblock エンレスト　製品基本情報（電子添文等）.
+\newblock \url{https://www.pro.novartis.com/jp-ja/products/entresto/document},
+  2026.
+\newblock 医療関係者向けサイト，最終閲覧日：2026年7月28日.
+
+\bibitem{novartis_terms}
+ノバルティスファーマ株式会社.
+\newblock {Novartis Pro Japan} サイト利用条件.
+\newblock \url{https://www.pro.novartis.com/jp-ja/node/1391/printable/pdf},
+  2026.
+\newblock
+  最終閲覧日：2026年7月27日．2026年7月28日の再アクセスではHTTP
+  403が返された.
+
+\bibitem{google_gemini35flash}
+{Google}.
+\newblock {Gemini 3.5 Flash}.
+\newblock \url{https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash},
+  2026.
+\newblock
+  モデルID：\texttt{gemini-3.5-flash}，保存予測作成日：2026年6月24日，最終閲覧日：2026年7月27日.
+
+\end{thebibliography}

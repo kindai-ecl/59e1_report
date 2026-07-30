@@ -1,0 +1,320 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[top=12mm,bottom=11mm,left=17mm,right=17mm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage{url}
+
+\IfFontExistsTF{Yu Mincho}{
+  \setmainfont{Yu Mincho}[BoldFont=Yu Gothic]
+  \setCJKmainfont{Yu Mincho}[BoldFont=Yu Gothic]
+}{
+  \setmainfont{MS Mincho}
+  \setCJKmainfont{MS Mincho}
+}
+\IfFontExistsTF{Yu Gothic}{
+  \setsansfont{Yu Gothic}
+  \setCJKsansfont{Yu Gothic}
+}{
+  \setsansfont{MS Gothic}
+  \setCJKsansfont{MS Gothic}
+}
+\setmonofont{Consolas}
+\setCJKmonofont{Yu Gothic}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+  pdftitle={Web画像から生成したRTI・部分画像を用いたマルチモーダルLLMによるPTP包装識別 中間報告書},
+  pdfauthor={呉竹 櫂人}
+}
+
+\titleformat{\section}
+  {\normalsize\bfseries\sffamily}
+  {\thesection．}{0.55em}{}
+\titlespacing*{\section}{0pt}{0.8ex plus 0.15ex minus 0.1ex}{0.3ex}
+
+\captionsetup{
+  font=small,
+  labelfont=normalfont,
+  labelsep=quad,
+  justification=centering,
+  hypcap=false,
+  skip=2pt
+}
+\renewcommand{\figurename}{図}
+\renewcommand{\refname}{参考文献}
+\setlength{\columnsep}{8mm}
+\setlength{\columnseprule}{0pt}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\abovecaptionskip}{2pt}
+\setlength{\belowcaptionskip}{2pt}
+\linespread{1.00}
+\AtBeginEnvironment{thebibliography}{%
+  \fontsize{7.2pt}{8.2pt}\selectfont
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+}
+
+\newcommand{\PTP}{PTP包装}
+\newcommand{\RTI}{RTI}
+\newcommand{\LoRA}{LoRA}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+  {\Large\bfseries\sffamily
+    Web画像から生成したRTI・部分画像を用いた\\[-1mm]
+    マルチモーダルLLMによるPTP包装識別
+  \par}
+\end{center}
+\vspace{-2.5mm}
+\noindent\hfill{\small 近畿大学情報学部情報学科　23--1--211--0009　呉竹 櫂人}\par
+\vspace{0.5mm}
+
+\begin{multicols}{2}
+\raggedcolumns
+
+% 研究内容の根拠: 260708_卒業研究_全体整理_再監査版.md,
+% 260711_技術解説_VLM_LoRA_Heo2023.md, 260728.md, 260804.md
+\section{序論}
+
+薬剤の容器を失った場合には外観から薬剤を確認する必要があり，画像認識による薬剤識別は取り違えの防止を支援し得る\cite{heo2023pill}．
+一方，学習時に固定したクラスラベルを直接分類する方式では，学習に含まれない薬剤を識別できない課題がある\cite{heo2023pill}．
+本研究の目的は，少数のWeb上のPTP（Press Through Package）包装画像から学習画像を生成し，単一薬剤と複数薬剤を識別できる方法を検討することである．
+提案手法は，表裏統合画像と部分画像でマルチモーダルLLMをLow-Rank Adaptation（LoRA）により追加学習し，複数薬剤では候補領域を個別に識別するものである\cite{han2021blister,hu2022lora}．
+
+\section{提案手法}
+
+\PTP は錠剤を収めたシート状の包装であり，表面と裏面では見える印字や外観が異なる．
+Hanらは，表裏画像の向きと大きさを正規化して結合した画像をRe-oriented Two-sided Image（RTI）と呼んでいる\cite{han2021blister}．
+本研究では，Web画像へ背景除去と向き補正を適用し，この両面統合構成に基づく\RTI を生成する．
+さらに，フルシート，1/2画像，1/4画像および切り出し位置の異なる部分画像を生成する．
+マルチモーダルLLMは，画像と質問文を同時に受け取り，薬剤名を文章として出力する．
+\LoRA は基盤モデル全体ではなく小さな追加重みを学習し，汎用モデルを薬剤名の出力へ適応させる．
+推論時には，単一薬剤用と複数薬剤用の追加重みを入力に応じて使い分ける．
+複数薬剤では，画像全体を一度に識別せず，薬剤ごとの候補領域を最大10個まで矩形画像として切り出す．
+各候補領域を黒背景の448×448画像へ整形し，単一薬剤と同じ入力形式で個別に推論する．
+図\ref{fig:activity}に，提案手法の学習と評価の流れをUMLアクティビティ図で示す．
+
+\begin{center}
+\begin{tikzpicture}[
+  font=\scriptsize\sffamily,
+  node distance=2mm,
+  action/.style={
+    draw=black,
+    rounded corners=1.5pt,
+    align=center,
+    minimum height=6.5mm,
+    text width=61mm,
+    inner sep=2pt
+  },
+  branch/.style={
+    draw=black,
+    rounded corners=1.5pt,
+    align=center,
+    minimum height=12mm,
+    text width=28.5mm,
+    inner sep=2pt
+  },
+  result/.style={
+    branch,
+    fill=gray!18,
+    font=\scriptsize\bfseries\sffamily
+  },
+  decision/.style={
+    diamond,
+    draw=black,
+    aspect=2.4,
+    align=center,
+    inner xsep=2pt,
+    inner ysep=1pt
+  },
+  flow/.style={
+    -{Latex[length=2.4mm,width=1.7mm]},
+    line width=0.65pt,
+    shorten >=0.6pt
+  },
+  initial/.style={circle,fill=black,minimum size=3.6mm,inner sep=0pt},
+  final/.style={circle,draw=black,double,fill=black,minimum size=4.5mm,inner sep=0pt}
+]
+  \node[initial] (start) {};
+  \node[action,below=of start] (derive)
+    {対象薬剤のWeb画像から\\RTI・大きさと位置の異なる部分画像を生成};
+  \node[action,below=of derive] (train)
+    {基盤マルチモーダルLLMをLoRAで追加学習\\用途別の追加重みを作成};
+  \node[decision,below=2mm of train] (kind) {入力画像};
+  \node[branch] (single) at ($(kind.south)+(-18mm,-8mm)$)
+    {単一薬剤画像\\単一薬剤用の追加重みで\\薬剤名を1つ予測};
+  \node[branch] (multi) at ($(kind.south)+(18mm,-8mm)$)
+    {複数薬剤画像\\最大10候補を抽出・整形し\\複数薬剤用の追加重みで個別予測};
+  \node[result,below=of single] (single-result)
+    {Top-1\\精度};
+  \node[result,below=of multi] (multi-result)
+    {薬剤集合の\\包含・完全一致率};
+  \node[final,below=1.5mm of single-result] (single-end) {};
+  \node[final,below=1.5mm of multi-result] (multi-end) {};
+
+  \draw[flow] (start) -- (derive);
+  \draw[flow] (derive) -- (train);
+  \draw[flow] (train) -- (kind);
+  \draw[flow] (kind.west) -| node[pos=0.25,above,font=\scriptsize\sffamily]{単一} (single.north);
+  \draw[flow] (kind.east) -| node[pos=0.25,above,font=\scriptsize\sffamily]{複数} (multi.north);
+  \draw[flow] (single) -- (single-result);
+  \draw[flow] (multi) -- (multi-result);
+  \draw[flow] (single-result) -- (single-end);
+  \draw[flow] (multi-result) -- (multi-end);
+\end{tikzpicture}%
+\captionof{figure}{提案手法における学習と単一・複数薬剤評価の流れ}
+\label{fig:activity}
+\end{center}
+
+図\ref{fig:activity}では，入力画像が単一薬剤か複数薬剤かによって推論処理を分ける．
+単一薬剤では画像1枚から薬剤名を1つ予測する．
+複数薬剤では切り出した候補領域を個別に予測し，予測結果を画像内の薬剤集合としてまとめる．
+
+\section{実験結果・考察}
+
+学習とQwen推論はNVIDIA H100（VRAM 93\,GiB）上で実行した．
+実行環境はLinux 6.8.0，Python 3.13.5，CUDA 12.8およびcuDNN 9.19とした．
+学習にはPyTorch 2.11.0，Transformers 5.14.1，PEFT 0.19.1およびBF16（bfloat16）を用いた．
+基盤モデルはQwen/Qwen3.5-4Bの固定リビジョン851bf6e8を用いた\cite{qwen35model}．
+単一薬剤用と複数薬剤用には，それぞれrank 32，alpha 64の追加重みを用いた．
+単一薬剤用の学習では，基画像1,265枚へ17提示条件を適用した．
+学習率は$2\times10^{-4}$，エポック数は5，実効バッチは128，乱数シードは42とした．
+
+本実験では被験者を用いなかった．
+単一薬剤は，Web画像の学習に用いていない薬剤部撮影の41薬剤287枚で評価した．
+指標は，最初に出力した薬剤名と正解名の正規化後完全一致によるTop-1精度とした．
+図\ref{fig:results}（a）に，同一287枚を用いた提案手法，Gemini 3.5 FlashおよびLoRA未適用Qwen3.5-4Bの参考比較を示す．
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  ybar,
+  width=\columnwidth,
+  height=27mm,
+  ymin=0,
+  ymax=116,
+  ytick={0,50,100},
+  title={Top-1精度（\%）},
+  title style={
+    font=\scriptsize,
+    at={(axis description cs:0,1.03)},
+    anchor=south west
+  },
+  symbolic x coords={Qwen,Gemini,method},
+  xtick=data,
+  xticklabels={\shortstack{LoRA\\未適用},Gemini,提案手法},
+  x tick label style={font=\scriptsize},
+  y tick label style={font=\scriptsize},
+  bar width=13mm,
+  nodes near coords,
+  nodes near coords style={font=\scriptsize,anchor=south,yshift=0.2mm},
+  grid=major,
+  grid style={gray!25},
+  axis x line*=bottom,
+  axis y line*=left,
+  axis line style={thin},
+  tick style={thin},
+  enlarge x limits=0.18
+]
+\addplot[fill=gray!45,draw=black] coordinates {
+  (Qwen,1.05)
+  (Gemini,98.95)
+  (method,99.65)
+};
+\end{axis}
+\end{tikzpicture}
+\par\vspace{0.5mm}
+{\scriptsize （a）同一287枚の参考比較（学習条件は非統一）\par}
+\vspace{0.8mm}
+\begin{tikzpicture}
+\begin{axis}[
+  ybar,
+  width=\columnwidth,
+  height=24mm,
+  ymin=0,
+  ymax=120,
+  ytick={0,50,100},
+  title={評価値（\%）},
+  title style={
+    font=\scriptsize,
+    at={(axis description cs:0,1.03)},
+    anchor=south west
+  },
+  symbolic x coords={include,topn},
+  xtick=data,
+  xticklabels={全正解薬剤包含,既知Top-N完全一致},
+  x tick label style={font=\scriptsize},
+  y tick label style={font=\scriptsize},
+  bar width=15mm,
+  grid=major,
+  grid style={gray!25},
+  axis x line*=bottom,
+  axis y line*=left,
+  axis line style={thin},
+  tick style={thin},
+  enlarge x limits=0.22,
+  clip=false
+]
+\addplot[fill=gray!65,draw=black] coordinates {
+  (include,98.75)
+  (topn,85.25)
+};
+\node[font=\scriptsize,anchor=south,yshift=0pt]
+  at (axis cs:include,98.75) {98.75};
+\node[font=\scriptsize,anchor=south,yshift=0.6mm]
+  at (axis cs:topn,85.25) {85.25};
+\end{axis}
+\end{tikzpicture}
+\par\vspace{0.5mm}
+{\scriptsize （b）提案手法による合成複数薬剤評価\par}
+\captionof{figure}{学習条件が異なる同一287枚の参考比較と合成複数薬剤評価}
+\label{fig:results}
+\end{center}
+
+単一薬剤では，提案手法が286/287（99.65\%），Gemini 3.5 Flashが284/287（98.95\%），LoRA未適用Qwen3.5-4Bが3/287（1.05\%）だった．
+Gemini 3.5 FlashはモデルID\texttt{gemini-3.5-flash}を用い，保存回答を同じ完全一致規則で再集計した．
+提案手法は条件選択に用いた内部評価結果だったため，独立最終評価による優位性を示す比較ではなかった．
+また，LoRA未適用モデルは別の主条件と入力を統一した実験から引用したため，図\ref{fig:results}（a）はLoRAだけの効果を示す比較ではなかった．
+採用条件は乱数シード42による1回の学習結果であり，条件間差の再現性は確認していなかった．
+
+合成複数薬剤は，2，3，5，8薬剤の固定タイル画像を各200枚生成し，計800枚を評価した．
+候補領域は最大10個とし，各領域を黒背景448×448画像へ整形して推論した．
+図\ref{fig:results}（b）に，全正解薬剤を候補へ含めた割合と，薬剤数を既知として上位N候補だけを残した完全一致率を示す．
+提案手法は前者が790/800（98.75\%），後者が682/800（85.25\%）だった．
+後者が13.50ポイント低かった理由は，前景強度の順位が識別の確信度を表さず，正しい下位候補も削除されたためだった．
+同一条件のGemini 3.5 FlashおよびLoRA未適用Qwen3.5-4Bによる合成複数評価は未実施だった．
+また，本評価は固定タイル合成画像を用いたため，実写複数薬剤に対する性能を示す結果ではなかった．
+
+\section{結論}
+
+本研究では，少数のWeb画像から\RTI と部分画像を生成し，用途別の追加重みで単一・複数薬剤を識別する方法を提案した．
+41薬剤の内部評価画像287枚では99.65\%となり，Gemini 3.5 Flashの98.95\%およびLoRA未適用Qwen3.5-4Bの1.05\%と参考比較した．
+固定タイル合成画像では，全正解薬剤包含率が98.75\%，既知Top-N完全一致率が85.25\%となった．
+これらから，内部評価集合と合成画像の範囲では，提案手法による識別可能性を確認した．
+少数のWeb画像から学習画像を生成し，単一識別を複数薬剤へ拡張する構成を示したことに意義があった．
+今後は実写複数薬剤で再評価する必要があると判断した．
+さらに，未知薬剤を既知薬剤として断定しない安全性も検証する必要があると判断した．
+
+\bibliographystyle{junsrt}
+\bibliography{references}
+
+\end{multicols}
+\end{document}

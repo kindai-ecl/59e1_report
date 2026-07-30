@@ -1,0 +1,35 @@
+\begin{thebibliography}{99}
+
+
+\bibitem{heo2023pill}
+J.~Heo, Y.~Kang, S.~Lee, D.-H. Jeong, and K.-M. Kim.
+\newblock An Accurate Deep Learning-Based System for Automatic Pill
+  Identification: Model Development and Validation.
+\newblock Journal of Medical Internet Research, Vol.~25, pp.~e41043, 2023.
+\newblock
+  \url{https://doi.org/10.2196/41043}，最終閲覧日：2026年7月30日.
+
+\bibitem{han2021blister}
+Y.~Han, S.-L. Chung, Q.~Xiao, J.-S. Wang, and S.-F. Su.
+\newblock Pharmaceutical Blister Package Identification Based on Induced Deep
+  Learning.
+\newblock IEEE Access, Vol.~9, pp.~101344--101356, 2021.
+\newblock
+  \url{https://doi.org/10.1109/ACCESS.2021.3097181}，最終閲覧日：2026年7月30日.
+
+\bibitem{hu2022lora}
+E.~J. Hu, Y.~Shen, P.~Wallis, Z.~Allen-Zhu, Y.~Li, S.~Wang, L.~Wang, and
+  W.~Chen.
+\newblock {LoRA}: Low-Rank Adaptation of Large Language Models.
+\newblock In Proceedings of the 10th International Conference on Learning
+  Representations, 2022.
+\newblock
+  \url{https://openreview.net/forum?id=nZeVKeeFYf9}，最終閲覧日：2026年7月30日.
+
+\bibitem{qwen35model}
+{Qwen Team}.
+\newblock {Qwen3.5-4B} Model Card.
+\newblock \url{https://huggingface.co/Qwen/Qwen3.5-4B}, 2026,
+  使用リビジョン：851bf6e8，最終閲覧日：2026年7月30日.
+
+\end{thebibliography}
