@@ -1,0 +1,262 @@
+\relax 
+\citation{who_medication}
+\citation{jcqhc_hiyari}
+\citation{jcqhc_similarity}
+\citation{suetsugu2026ai}
+\citation{heo2023pill}
+\citation{radli2024word}
+\citation{radli2024metric}
+\citation{shorten2019augmentation}
+\@writefile{toc}{\contentsline {section}{\numberline {1}序論}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}研究背景}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}研究課題}{1}{}\protected@file@percent }
+\newlabel{sec:research_question}{{1.2}{1}{}{subsection.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}研究目的と提案}{1}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 研究テーマの課題，解決策，評価方法}}{2}{}\protected@file@percent }
+\newlabel{tab:research_summary}{{1}{2}{}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}本報告書の構成}{3}{}\protected@file@percent }
+\citation{heo2023pill}
+\citation{radli2024word}
+\citation{radli2024metric}
+\citation{nguyen2025pillreview}
+\citation{usuyama2020epillid}
+\citation{ling2020fewshot}
+\citation{menaha2024gemini}
+\citation{han2021blister}
+\@writefile{toc}{\contentsline {section}{\numberline {2}関連研究・関連技術}{4}{}\protected@file@percent }
+\newlabel{sec:related}{{2}{4}{}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}薬剤画像の認識}{4}{}\protected@file@percent }
+\citation{bai2023qwenvl}
+\citation{qwen3vl2025}
+\citation{bai2023qwenvl}
+\citation{qwen3vl2025}
+\citation{qwen35model}
+\citation{hu2022lora}
+\citation{dettmers2023qlora}
+\citation{shorten2019augmentation}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Vision-Language Modelとマルチモーダル\mbox  {LLM}}{5}{}\protected@file@percent }
+\newlabel{sec:vlm}{{2.2}{5}{}{subsection.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}LoRAとQLoRA}{5}{}\protected@file@percent }
+\newlabel{eq:lora}{{1}{5}{}{equation.1}{}}
+\citation{hendrycks2017ood}
+\citation{yang2024oodsurvey}
+\citation{liu2020energy}
+\citation{geifman2017selective}
+\citation{heo2023pill}
+\citation{radli2024word}
+\citation{radli2024metric}
+\citation{usuyama2020epillid}
+\citation{ling2020fewshot}
+\citation{menaha2024gemini}
+\citation{han2021blister}
+\citation{heo2023pill}
+\citation{radli2024word}
+\citation{radli2024metric}
+\citation{usuyama2020epillid}
+\citation{ling2020fewshot}
+\citation{menaha2024gemini}
+\citation{han2021blister}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}画像拡張の関連技術}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}未知入力の検出と選択的分類}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}本研究の位置付け}{6}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 関連研究と本研究の位置付け}}{7}{}\protected@file@percent }
+\newlabel{tab:related_comparison}{{2}{7}{}{table.2}{}}
+\citation{heo2023pill}
+\citation{radli2024word}
+\citation{radli2024metric}
+\citation{usuyama2020epillid}
+\citation{ling2020fewshot}
+\citation{han2021blister}
+\citation{menaha2024gemini}
+\@writefile{toc}{\contentsline {section}{\numberline {3}提案手法}{8}{}\protected@file@percent }
+\newlabel{sec:method}{{3}{8}{}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}処理の全体像}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 提案手法の処理を示すUMLアクティビティ図（スイムレーンで学習側と評価側を分離）}}{8}{}\protected@file@percent }
+\newlabel{fig:pipeline}{{1}{8}{}{figure.1}{}}
+\citation{han2021blister}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}収集画像の由来監査}{9}{}\protected@file@percent }
+\newlabel{sec:provenance_audit}{{3.2}{9}{}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}RTIと部分画像の生成}{9}{}\protected@file@percent }
+\newlabel{eq:rti}{{2}{9}{}{equation.2}{}}
+\citation{novartis_entresto_document}
+\citation{novartis_entresto_document}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 保存画像の表面・裏面からRTIを作成する手順（メインテート錠2.5mgの例）}}{10}{}\protected@file@percent }
+\newlabel{fig:rti}{{2}{10}{}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 収集元画像および保存済み派生基画像の例}}{10}{}\protected@file@percent }
+\newlabel{fig:actual_rti_pipeline}{{3}{10}{}{figure.3}{}}
+\newlabel{eq:base_count}{{3}{11}{}{equation.3}{}}
+\newlabel{eq:base_count_lvfx}{{4}{11}{}{equation.4}{}}
+\newlabel{eq:base_total}{{5}{11}{}{equation.5}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces 収集画像からの基画像生成}}{12}{}\protected@file@percent }
+\newlabel{alg:image_generation}{{1}{12}{}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}画像拡張}{12}{}\protected@file@percent }
+\newlabel{eq:augmentation}{{6}{12}{}{equation.6}{}}
+\newlabel{eq:exposure}{{7}{12}{}{equation.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 主条件Dで基画像へ適用する提示条件の模式図（上段：回転6条件のうち4条件，下段：無変換1条件と明度2条件）}}{13}{}\protected@file@percent }
+\newlabel{fig:augmentation_examples}{{4}{13}{}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}LoRA学習}{13}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces 主条件Dと探索的ver6の学習設定}}{13}{}\protected@file@percent }
+\newlabel{tab:primary_exploratory_settings}{{3}{13}{}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}評価方法}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.1}単剤評価に用いた画像}{14}{}\protected@file@percent }
+\newlabel{sec:single_eval}{{3.6.1}{14}{}{subsubsection.3.6.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 内部開発評価画像の元画像とモデル入力}}{14}{}\protected@file@percent }
+\newlabel{fig:internal_eval_examples}{{5}{14}{}{figure.5}{}}
+\newlabel{eq:top1}{{8}{15}{}{equation.8}{}}
+\newlabel{eq:macro}{{9}{15}{}{equation.9}{}}
+\newlabel{eq:wilson}{{10}{15}{}{equation.10}{}}
+\newlabel{eq:mcnemar_exact}{{11}{15}{}{equation.11}{}}
+\citation{google_gemini35flash}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.2}追加学習していないQwen3.5-4Bとの比較}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.3}外部サービスとの対応比較}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.4}合成複数薬剤画像}{16}{}\protected@file@percent }
+\newlabel{sec:multi_eval}{{3.6.4}{16}{}{subsubsection.3.6.4}{}}
+\newlabel{eq:exact_match}{{12}{16}{}{equation.12}{}}
+\newlabel{eq:region_acc}{{13}{16}{}{equation.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 評価入力の構成を示す模式図（左：単剤，右：合成複数薬剤）}}{17}{}\protected@file@percent }
+\newlabel{fig:eval_inputs}{{6}{17}{}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces 固定400枚に含まれる合成複数薬剤画像の実例}}{17}{}\protected@file@percent }
+\newlabel{fig:multi_actual_examples}{{7}{17}{}{figure.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.5}信頼ゲート}{17}{}\protected@file@percent }
+\newlabel{eq:margin}{{14}{18}{}{equation.14}{}}
+\newlabel{eq:tta_agree}{{15}{18}{}{equation.15}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces 信頼ゲートによる回答と保留の判定}}{18}{}\protected@file@percent }
+\newlabel{alg:trust_gate}{{2}{18}{}{algorithm.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.6}隙間のない合成複数薬剤画像による最大10候補評価}{19}{}\protected@file@percent }
+\newlabel{sec:zero_gap_top10_method}{{3.6.6}{19}{}{subsubsection.3.6.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces 隙間のない複数薬剤画像における候補抽出と整形の実例}}{20}{}\protected@file@percent }
+\newlabel{fig:zero_gap_pipeline}{{8}{20}{}{figure.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}実験結果・考察}{21}{}\protected@file@percent }
+\newlabel{sec:results}{{4}{21}{}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}実験環境とデータ監査結果}{21}{}\protected@file@percent }
+\newlabel{sec:env_data}{{4.1}{21}{}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}実験環境と撮影記録}{21}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 主条件Dおよび探索的ver6の実験環境}}{21}{}\protected@file@percent }
+\newlabel{tab:environment}{{4}{21}{}{table.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}データおよび監査結果}{21}{}\protected@file@percent }
+\newlabel{sec:data_audit_results}{{4.1.2}{21}{}{subsubsection.4.1.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces 内部開発評価画像の撮影・前処理記録}}{22}{}\protected@file@percent }
+\newlabel{tab:capture_conditions}{{5}{22}{}{table.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces ver6の学習損失（縦軸は対数目盛）}}{22}{}\protected@file@percent }
+\newlabel{fig:loss_curve}{{9}{22}{}{figure.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}初期実画像方式と収集画像学習への移行}{22}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces 初期実画像方式における学習元画像数および提示条件数とTop-1精度}}{23}{}\protected@file@percent }
+\newlabel{tab:fewshot_history}{{6}{23}{}{table.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}収集画像学習ver1からver3}{24}{}\protected@file@percent }
+\newlabel{sec:ver1_v3}{{4.3}{24}{}{subsection.4.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces 収集画像学習ver1からver3の入力と評価結果}}{24}{}\protected@file@percent }
+\newlabel{tab:web_v1_v3}{{7}{24}{}{table.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces ver1が1薬剤あたりに用いた学習画像の全11枚と拡張例}}{24}{}\protected@file@percent }
+\newlabel{fig:ver1_basic_images}{{10}{24}{}{figure.10}{}}
+\newlabel{eq:base_count_v2}{{16}{24}{}{equation.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}収集画像学習ver4（ver4条件AからDの比較）}{25}{}\protected@file@percent }
+\newlabel{sec:ver4_conditions}{{4.4}{25}{}{subsection.4.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces ver4条件AからDの設定と評価結果}}{25}{}\protected@file@percent }
+\newlabel{tab:conditions}{{8}{25}{}{table.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces ver4条件AからDの評価結果（3指標）}}{26}{}\protected@file@percent }
+\newlabel{fig:condition_comparison}{{11}{26}{}{figure.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces 主条件Dの層別正解率（分母は評価画像287枚の内訳）}}{26}{}\protected@file@percent }
+\newlabel{tab:condition_d_stratified}{{9}{26}{}{table.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces 主条件Dの誤分類7件（評価画像287枚）}}{27}{}\protected@file@percent }
+\newlabel{tab:condition_d_errors}{{10}{27}{}{table.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces 主条件Dの代表的な誤分類モデル入力}}{27}{}\protected@file@percent }
+\newlabel{fig:condition_d_errors}{{12}{27}{}{figure.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}収集画像学習ver5}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}収集画像学習ver6（LoRA容量の探索的追試）}{28}{}\protected@file@percent }
+\newlabel{sec:ver6_training}{{4.6}{28}{}{subsection.4.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces ver4条件C，ver6およびver7の評価結果（評価集合は同一）}}{28}{}\protected@file@percent }
+\newlabel{tab:condition_c_ver6}{{11}{28}{}{table.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}ver6の単剤評価}{29}{}\protected@file@percent }
+\newlabel{sec:ver6_single}{{4.7}{29}{}{subsection.4.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces ver4条件Cの誤分類4件に対するver6の予測}}{29}{}\protected@file@percent }
+\newlabel{tab:condition_c_errors_resolved}{{12}{29}{}{table.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces ver4条件Cとver6で正誤が変化したモデル入力}}{30}{}\protected@file@percent }
+\newlabel{fig:condition_c_vs_ver6}{{13}{30}{}{figure.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.8}追加学習していないQwen3.5-4Bとの比較}{30}{}\protected@file@percent }
+\newlabel{sec:qwen_baseline}{{4.8}{30}{}{subsection.4.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces 追加学習していないQwen3.5-4B，ver4条件D，ver6の同一287画像による比較}}{31}{}\protected@file@percent }
+\newlabel{tab:qwen_baseline}{{13}{31}{}{table.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.9}Gemini 3.5 Flashとの対応比較}{31}{}\protected@file@percent }
+\newlabel{sec:gemini_compare}{{4.9}{31}{}{subsection.4.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Gemini 3.5 Flashとver6で正誤が異なった画像}}{31}{}\protected@file@percent }
+\newlabel{tab:discordant_gemini_ver6}{{14}{31}{}{table.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.10}ver6の合成複数薬剤画像評価}{32}{}\protected@file@percent }
+\newlabel{sec:ver6_multi}{{4.10}{32}{}{subsection.4.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces ver6における薬剤数別の完全一致率}}{32}{}\protected@file@percent }
+\newlabel{fig:multi_count}{{14}{32}{}{figure.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.11}収集画像学習ver7（探索的追加実験）}{33}{}\protected@file@percent }
+\newlabel{sec:ver7_results}{{4.11}{33}{}{subsection.4.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.12}収集画像学習ver8・ver9の単剤評価}{33}{}\protected@file@percent }
+\newlabel{sec:ver8_ver9_results}{{4.12}{33}{}{subsection.4.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces 収集画像学習ver1からver9の単剤Top-1精度（評価はいずれも同じ287枚）}}{34}{}\protected@file@percent }
+\newlabel{tab:ver1_ver9_single}{{15}{34}{}{table.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.13}黒い区切りのない合成画像による予備評価}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.13.1}ver3入力素材を用いた領域抽出だけの評価}{34}{}\protected@file@percent }
+\newlabel{sec:zero_gap_detection}{{4.13.1}{34}{}{subsubsection.4.13.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces 黒い区切りのない合成画像に対する領域抽出の模式図}}{35}{}\protected@file@percent }
+\newlabel{fig:gapless_detection}{{15}{35}{}{figure.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.13.2}元写真タイルを用いたver6・ver7の検出後識別}{35}{}\protected@file@percent }
+\newlabel{sec:zero_gap_identification}{{4.13.2}{35}{}{subsubsection.4.13.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces 黒い区切りのない未知個数画像9枚に対する探索的評価}}{35}{}\protected@file@percent }
+\newlabel{tab:zero_gap_end_to_end}{{16}{35}{}{table.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces 共通背景・非接触配置における入力と領域抽出結果の実例}}{36}{}\protected@file@percent }
+\newlabel{fig:zero_gap_gapless_actual}{{16}{36}{}{figure.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces 元写真タイルにおける入力と検出結果の過検出例}}{37}{}\protected@file@percent }
+\newlabel{fig:zero_gap_flush_actual}{{17}{37}{}{figure.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.14}ver4条件Cの信頼ゲート評価}{37}{}\protected@file@percent }
+\newlabel{sec:trust_gate_results}{{4.14}{37}{}{subsection.4.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces ver4条件Cの信頼ゲートにおける校正集合と最終評価集合の結果}}{38}{}\protected@file@percent }
+\newlabel{tab:trust_gate_phase}{{17}{38}{}{table.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces 信頼ゲートを通過した未知薬剤と誤って回答した既知薬剤との組合せ}}{38}{}\protected@file@percent }
+\newlabel{tab:trust_gate_unsafe}{{18}{38}{}{table.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.15}学習薬剤数の段階増加（41から100薬剤）}{38}{}\protected@file@percent }
+\newlabel{sec:class_expansion}{{4.15}{38}{}{subsection.4.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces 実験82番41薬剤条件が1薬剤あたりに用いた元画像・RTI・学習用画像と拡張例}}{39}{}\protected@file@percent }
+\newlabel{fig:exp82_training_images}{{18}{39}{}{figure.18}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces 学習薬剤数を41から100へ段階的に増やしたときの実写41薬剤287枚の3seed平均精度}}{40}{}\protected@file@percent }
+\newlabel{tab:class_expansion}{{19}{40}{}{table.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces 学習薬剤数41から100までの全段階と3seedの精度}}{40}{}\protected@file@percent }
+\newlabel{fig:class_expansion_stages}{{19}{40}{}{figure.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.16}最高精度モデル（実験82番41薬剤条件）への信頼ゲート適用}{40}{}\protected@file@percent }
+\newlabel{sec:gate_exp82}{{4.16}{40}{}{subsection.4.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces 実験82番41薬剤条件への信頼ゲート適用結果（既知148枚，未知58枚，しきい値は再校正なし）}}{41}{}\protected@file@percent }
+\newlabel{tab:gate_exp82}{{20}{41}{}{table.20}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.17}隙間のない合成複数薬剤画像：最大10候補とTop-N評価}{41}{}\protected@file@percent }
+\newlabel{sec:zero_gap_top10_results}{{4.17}{41}{}{subsection.4.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {21}{\ignorespaces 隙間のない合成複数薬剤画像800枚に対する最大10候補方式と既知個数Top-N方式}}{41}{}\protected@file@percent }
+\newlabel{tab:zero_gap_top10_summary}{{21}{41}{}{table.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.18}総合考察}{42}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.19}妥当性の限界}{43}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}結論・今後の課題}{44}{}\protected@file@percent }
+\newlabel{sec:conclusion}{{5}{44}{}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}結論}{44}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}今後の課題}{44}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{謝辞}{46}{}\protected@file@percent }
+\bibstyle{junsrt}
+\bibdata{260930}
+\bibcite{who_medication}{1}
+\bibcite{jcqhc_hiyari}{2}
+\bibcite{jcqhc_similarity}{3}
+\bibcite{suetsugu2026ai}{4}
+\bibcite{heo2023pill}{5}
+\bibcite{radli2024word}{6}
+\bibcite{radli2024metric}{7}
+\bibcite{shorten2019augmentation}{8}
+\bibcite{nguyen2025pillreview}{9}
+\bibcite{usuyama2020epillid}{10}
+\bibcite{ling2020fewshot}{11}
+\@writefile{toc}{\contentsline {section}{参考文献}{47}{}\protected@file@percent }
+\bibcite{menaha2024gemini}{12}
+\bibcite{han2021blister}{13}
+\bibcite{bai2023qwenvl}{14}
+\bibcite{qwen3vl2025}{15}
+\bibcite{qwen35model}{16}
+\bibcite{hu2022lora}{17}
+\bibcite{dettmers2023qlora}{18}
+\bibcite{hendrycks2017ood}{19}
+\bibcite{yang2024oodsurvey}{20}
+\bibcite{liu2020energy}{21}
+\bibcite{geifman2017selective}{22}
+\bibcite{novartis_entresto_document}{23}
+\bibcite{google_gemini35flash}{24}
+\gdef \@abspage@last{53}

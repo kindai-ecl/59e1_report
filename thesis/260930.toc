@@ -1,0 +1,54 @@
+\contentsline {section}{\numberline {1}序論}{1}{}%
+\contentsline {subsection}{\numberline {1.1}研究背景}{1}{}%
+\contentsline {subsection}{\numberline {1.2}研究課題}{1}{}%
+\contentsline {subsection}{\numberline {1.3}研究目的と提案}{1}{}%
+\contentsline {subsection}{\numberline {1.4}本報告書の構成}{3}{}%
+\contentsline {section}{\numberline {2}関連研究・関連技術}{4}{}%
+\contentsline {subsection}{\numberline {2.1}薬剤画像の認識}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Vision-Language Modelとマルチモーダル\mbox {LLM}}{5}{}%
+\contentsline {subsection}{\numberline {2.3}LoRAとQLoRA}{5}{}%
+\contentsline {subsection}{\numberline {2.4}画像拡張の関連技術}{6}{}%
+\contentsline {subsection}{\numberline {2.5}未知入力の検出と選択的分類}{6}{}%
+\contentsline {subsection}{\numberline {2.6}本研究の位置付け}{6}{}%
+\contentsline {section}{\numberline {3}提案手法}{8}{}%
+\contentsline {subsection}{\numberline {3.1}処理の全体像}{8}{}%
+\contentsline {subsection}{\numberline {3.2}収集画像の由来監査}{9}{}%
+\contentsline {subsection}{\numberline {3.3}RTIと部分画像の生成}{9}{}%
+\contentsline {subsection}{\numberline {3.4}画像拡張}{12}{}%
+\contentsline {subsection}{\numberline {3.5}LoRA学習}{13}{}%
+\contentsline {subsection}{\numberline {3.6}評価方法}{14}{}%
+\contentsline {subsubsection}{\numberline {3.6.1}単剤評価に用いた画像}{14}{}%
+\contentsline {subsubsection}{\numberline {3.6.2}追加学習していないQwen3.5-4Bとの比較}{16}{}%
+\contentsline {subsubsection}{\numberline {3.6.3}外部サービスとの対応比較}{16}{}%
+\contentsline {subsubsection}{\numberline {3.6.4}合成複数薬剤画像}{16}{}%
+\contentsline {subsubsection}{\numberline {3.6.5}信頼ゲート}{17}{}%
+\contentsline {subsubsection}{\numberline {3.6.6}隙間のない合成複数薬剤画像による最大10候補評価}{19}{}%
+\contentsline {section}{\numberline {4}実験結果・考察}{21}{}%
+\contentsline {subsection}{\numberline {4.1}実験環境とデータ監査結果}{21}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}実験環境と撮影記録}{21}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}データおよび監査結果}{21}{}%
+\contentsline {subsection}{\numberline {4.2}初期実画像方式と収集画像学習への移行}{22}{}%
+\contentsline {subsection}{\numberline {4.3}収集画像学習ver1からver3}{24}{}%
+\contentsline {subsection}{\numberline {4.4}収集画像学習ver4（ver4条件AからDの比較）}{25}{}%
+\contentsline {subsection}{\numberline {4.5}収集画像学習ver5}{28}{}%
+\contentsline {subsection}{\numberline {4.6}収集画像学習ver6（LoRA容量の探索的追試）}{28}{}%
+\contentsline {subsection}{\numberline {4.7}ver6の単剤評価}{29}{}%
+\contentsline {subsection}{\numberline {4.8}追加学習していないQwen3.5-4Bとの比較}{30}{}%
+\contentsline {subsection}{\numberline {4.9}Gemini 3.5 Flashとの対応比較}{31}{}%
+\contentsline {subsection}{\numberline {4.10}ver6の合成複数薬剤画像評価}{32}{}%
+\contentsline {subsection}{\numberline {4.11}収集画像学習ver7（探索的追加実験）}{33}{}%
+\contentsline {subsection}{\numberline {4.12}収集画像学習ver8・ver9の単剤評価}{33}{}%
+\contentsline {subsection}{\numberline {4.13}黒い区切りのない合成画像による予備評価}{34}{}%
+\contentsline {subsubsection}{\numberline {4.13.1}ver3入力素材を用いた領域抽出だけの評価}{34}{}%
+\contentsline {subsubsection}{\numberline {4.13.2}元写真タイルを用いたver6・ver7の検出後識別}{35}{}%
+\contentsline {subsection}{\numberline {4.14}ver4条件Cの信頼ゲート評価}{37}{}%
+\contentsline {subsection}{\numberline {4.15}学習薬剤数の段階増加（41から100薬剤）}{38}{}%
+\contentsline {subsection}{\numberline {4.16}最高精度モデル（実験82番41薬剤条件）への信頼ゲート適用}{40}{}%
+\contentsline {subsection}{\numberline {4.17}隙間のない合成複数薬剤画像：最大10候補とTop-N評価}{41}{}%
+\contentsline {subsection}{\numberline {4.18}総合考察}{42}{}%
+\contentsline {subsection}{\numberline {4.19}妥当性の限界}{43}{}%
+\contentsline {section}{\numberline {5}結論・今後の課題}{44}{}%
+\contentsline {subsection}{\numberline {5.1}結論}{44}{}%
+\contentsline {subsection}{\numberline {5.2}今後の課題}{44}{}%
+\contentsline {section}{謝辞}{46}{}%
+\contentsline {section}{参考文献}{47}{}%
