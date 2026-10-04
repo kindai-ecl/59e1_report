@@ -1,0 +1,23 @@
+\begin{thebibliography}{1}
+
+\bibitem{who2017}
+{World Health Organization}.
+\newblock {Medication Without Harm: WHO Global Patient Safety Challenge}.
+\newblock \url{https://www.who.int/publications/i/item/WHO-HIS-SDS-2017.6},
+  2017.
+\newblock 最終閲覧日：2026年10月4日.
+
+\bibitem{han2021}
+Yun Han, Sheng-Luen Chung, Qiang Xiao, Jing-Syuan Wang, and Shun-Feng Su.
+\newblock Pharmaceutical blister package identification based on induced deep
+  learning.
+\newblock {\em IEEE Access}, Vol.~9, pp. 101344--101356, 2021.
+
+\bibitem{hu2022}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
+  Wang, Lu~Wang, and Weizhu Chen.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock In {\em Proceedings of the 10th International Conference on Learning
+  Representations}, 2022.
+
+\end{thebibliography}
