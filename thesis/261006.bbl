@@ -1,91 +1,91 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{99}
+
+
+\bibitem{han2021blister}
+Y.~Han, S.-L. Chung, Q.~Xiao, J.-S. Wang, and S.-F. Su.
+\newblock Pharmaceutical Blister Package Identification Based on Induced Deep
+  Learning.
+\newblock IEEE Access, Vol.~9, pp.~101344--101356, 2021.
+\newblock \url{https://doi.org/10.1109/ACCESS.2021.3097181},
+  最終閲覧日：2026年7月26日.
 
 \bibitem{who_medication}
 {World Health Organization}.
 \newblock {Medication Without Harm: WHO Global Patient Safety Challenge}.
 \newblock \url{https://www.who.int/publications/i/item/WHO-HIS-SDS-2017.6},
-  2017.
-\newblock 最終閲覧日：2026年10月4日.
-
-\bibitem{han2021blister}
-Yun Han, Sheng-Luen Chung, Qiang Xiao, Jing-Syuan Wang, and Shun-Feng Su.
-\newblock Pharmaceutical blister package identification based on induced deep
-  learning.
-\newblock {\em IEEE Access}, Vol.~9, pp. 101344--101356, 2021.
-\newblock \url{https://doi.org/10.1109/ACCESS.2021.3097181},
-  最終閲覧日：2026年7月26日.
+  2017, 最終閲覧日：2026年10月4日.
 
 \bibitem{suetsugu2026ai}
 {末次 王卓}, {金澤 直子}, {正門 佳法}, {天達 菜緒},
-  {副田 雪乃}, {屋地 慶子}, {寺薗 英之}.
+  {副田 雪乃}, {屋地 慶子}, and {寺薗 英之}.
 \newblock
   {AI}画像解析錠剤識別システムの使用による持参薬錠剤一包化鑑別作業の効率化と薬剤助手へのタスク・シフト／タスク・シェアに関する評価.
-\newblock 医療薬学, Vol.~52, No.~5, pp. 273--281, 2026.
+\newblock 医療薬学, Vol.~52, No.~5, pp.~273--281, 2026.
 \newblock \url{https://doi.org/10.5649/jjphcs.52.273},
   最終閲覧日：2026年7月25日.
 
 \bibitem{heo2023pill}
-Junyeong Heo, Youjin Kang, SangKeun Lee, Dong-Hwa Jeong, and Kang-Min Kim.
-\newblock An accurate deep learning-based system for automatic pill
-  identification: Model development and validation.
-\newblock {\em Journal of Medical Internet Research}, Vol.~25, p. e41043, 2023.
+J.~Heo, Y.~Kang, S.~Lee, D.-H. Jeong, and K.-M. Kim.
+\newblock An Accurate Deep Learning-Based System for Automatic Pill
+  Identification: Model Development and Validation.
+\newblock Journal of Medical Internet Research, Vol.~25, pp.~e41043, 2023.
 \newblock \url{https://doi.org/10.2196/41043},
   最終閲覧日：2026年7月25日.
 
 \bibitem{usuyama2020epillid}
-Naoto Usuyama, Natalia~Larios Delgado, Amanda~K. Hall, and Jessica Lundin.
-\newblock {ePillID} dataset: A low-shot fine-grained benchmark for pill
-  identification.
-\newblock In {\em 2020 IEEE/CVF Conference on Computer Vision and Pattern
-  Recognition Workshops (CVPRW)}, pp. 3971--3977, 2020.
+N.~Usuyama, N.~L. Delgado, A.~K. Hall, and J.~Lundin.
+\newblock {ePillID} Dataset: A Low-Shot Fine-Grained Benchmark for Pill
+  Identification.
+\newblock In 2020 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition Workshops (CVPRW), pp.~3971--3977, 2020.
 \newblock \url{https://doi.org/10.1109/CVPRW50498.2020.00463},
   最終閲覧日：2026年8月10日.
 
 \bibitem{shorten2019augmentation}
-Connor Shorten and Taghi~M. Khoshgoftaar.
-\newblock A survey on image data augmentation for deep learning.
-\newblock {\em Journal of Big Data}, Vol.~6, No.~1, 2019.
+C.~Shorten and T.~M. Khoshgoftaar.
+\newblock A Survey on Image Data Augmentation for Deep Learning.
+\newblock Journal of Big Data, Vol.~6, No.~1, 2019.
 \newblock Article 60, \url{https://doi.org/10.1186/s40537-019-0197-0},
   最終閲覧日：2026年7月25日.
 
 \bibitem{menaha2024gemini}
-R.~Menaha, R.~Abilaash, P.~N. Mohanram, Akash Unnikrishnan, and S.~Sukumar.
-\newblock Drug pills identification system using {Google Gemini} {LLM}: A
-  generative {AI} approach.
-\newblock In {\em 2024 International Conference on Emerging Research in
-  Computational Science (ICERCS)}, pp. 1--5, 2024.
+R.~Menaha, R.~Abilaash, P.~N. Mohanram, A.~Unnikrishnan, and S.~Sukumar.
+\newblock Drug Pills Identification System using {Google Gemini} {LLM}: A
+  Generative {AI} Approach.
+\newblock In 2024 International Conference on Emerging Research in
+  Computational Science (ICERCS), pp.~1--5, 2024.
 \newblock \url{https://doi.org/10.1109/ICERCS63125.2024.10895371},
   最終閲覧日：2026年7月25日.
 
 \bibitem{bai2023qwenvl}
-Jinze Bai, Shuai Bai, Shusheng Yang, Shijie Wang, Sinan Tan, Peng Wang, Junyang
-  Lin, Chang Zhou, and Jingren Zhou.
-\newblock {Qwen-VL}: A versatile vision-language model for understanding,
-  localization, text reading, and beyond.
-\newblock \url{https://arxiv.org/abs/2308.12966}, 2023.
-\newblock arXiv:2308.12966, 最終閲覧日：2026年7月25日.
+J.~Bai, S.~Bai, S.~Yang, S.~Wang, S.~Tan, P.~Wang, J.~Lin, C.~Zhou, and
+  J.~Zhou.
+\newblock {Qwen-VL}: A Versatile Vision-Language Model for Understanding,
+  Localization, Text Reading, and Beyond.
+\newblock \url{https://arxiv.org/abs/2308.12966}, 2023, arXiv:2308.12966,
+  最終閲覧日：2026年7月25日.
 
 \bibitem{qwen35model}
 {Qwen Team}.
-\newblock {Qwen3.5-4B} model card.
-\newblock \url{https://huggingface.co/Qwen/Qwen3.5-4B}, 2026.
-\newblock 使用リビジョン：851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a,
+\newblock {Qwen3.5-4B} Model Card.
+\newblock \url{https://huggingface.co/Qwen/Qwen3.5-4B}, 2026,
+  使用リビジョン：851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a,
   最終閲覧日：2026年7月27日.
 
 \bibitem{hu2022lora}
-Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
-  Wang, Lu~Wang, and Weizhu Chen.
-\newblock {LoRA}: Low-rank adaptation of large language models.
-\newblock In {\em Proceedings of the 10th International Conference on Learning
-  Representations}, 2022.
+E.~J. Hu, Y.~Shen, P.~Wallis, Z.~Allen-Zhu, Y.~Li, S.~Wang, L.~Wang, and
+  W.~Chen.
+\newblock {LoRA}: Low-Rank Adaptation of Large Language Models.
+\newblock In Proceedings of the 10th International Conference on Learning
+  Representations, 2022.
 \newblock 著者版：\url{https://arxiv.org/abs/2106.09685},
   最終閲覧日：2026年7月25日.
 
 \bibitem{geifman2017selective}
-Yonatan Geifman and Ran El-Yaniv.
-\newblock Selective classification for deep neural networks.
-\newblock In {\em Advances in Neural Information Processing Systems 30}, pp.
-  4878--4887, 2017.
+Y.~Geifman and R.~El-Yaniv.
+\newblock Selective Classification for Deep Neural Networks.
+\newblock In Advances in Neural Information Processing Systems 30,
+  pp.~4878--4887, 2017.
 \newblock
   \url{https://proceedings.neurips.cc/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html},
   最終閲覧日：2026年8月11日.
@@ -94,7 +94,7 @@ Yonatan Geifman and Ran El-Yaniv.
 {田辺ファーマ}.
 \newblock 製剤写真 メインテート錠2.5mg／500錠（10錠×50）.
 \newblock
-  \url{https://medical.tanabe-pharma.com/di/product/mnt/photo/thumbnails/0000002350/}.
-\newblock 10錠PTP写真，最終閲覧日：2026年10月4日.
+  \url{https://medical.tanabe-pharma.com/di/product/mnt/photo/thumbnails/0000002350/},
+  10錠PTP写真，最終閲覧日：2026年10月4日.
 
 \end{thebibliography}
