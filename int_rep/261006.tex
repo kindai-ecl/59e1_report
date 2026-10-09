@@ -2,11 +2,14 @@
 \usepackage[a4paper,top=24mm,bottom=25mm,left=15mm,right=15mm,nohead,nofoot]{geometry}
 \usepackage{amsmath,amssymb,graphicx,tikz,pgfplots,float,titlesec,url}
 \usepackage{cite}
+\usepackage{etoolbox}
+\apptocmd{\thebibliography}{\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}}{}{}
 \usetikzlibrary{arrows.meta,positioning}
 \pgfplotsset{compat=1.18}
 \setlength{\columnsep}{8mm}\setlength{\emergencystretch}{2em}\hbadness=3500
 \setlength{\parskip}{0pt}
 \setlength{\intextsep}{3pt}
+\setlength{\textfloatsep}{6pt plus 2pt minus 2pt}
 \setlength{\abovecaptionskip}{2pt}
 \setlength{\belowcaptionskip}{0pt}
 \titleformat{\section}{\normalsize\bfseries}{\thesection.}{.5em}{}
@@ -40,10 +43,11 @@
 各画像に回転12種と明るさ5種の変換を別々に施し，1枚から計17枚の拡張画像を作る。
 モデルには画像と指示文「この錠剤は何という薬ですか？薬剤名だけで答えてください。」を入力し，正解の薬剤名を出力するように学習する。
 識別時も同じ指示文を使い，薬剤名の候補は与えない。
+図\ref{fig:maintate}に，メインテート錠2.5mgの収集画像，部分画像，実写画像の例を示す。
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[x=1mm,y=1mm,font=\fontsize{8}{9}\selectfont,
+\begin{tikzpicture}[x=1mm,y=0.85mm,font=\fontsize{8}{9}\selectfont,
  act/.style={draw,rounded corners=1.5mm,align=center,minimum height=5mm,inner sep=1.5pt},
  obj/.style={draw,align=center,minimum height=5mm,inner sep=1.5pt},
  arr/.style={-{Stealth[length=1.5mm]},line width=.45pt}]
@@ -70,6 +74,12 @@
 \caption{提案手法の学習と識別の流れ（UMLアクティビティ図）}
 \label{fig:flow}
 \end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{fig_maintate.png}
+\caption{収集画像から作る部分画像と実写画像の例}
+\label{fig:maintate}
+\end{figure}
 
 LoRAは，元の重み$W_0$を固定し，低ランク行列の積を更新として加える手法である\cite{hu2022}。
 学習するのは，式\eqref{eq:lora}の行列$A$と$B$だけである。
@@ -93,8 +103,6 @@ W=W_0+\frac{\alpha}{r}BA
 \fontsize{8}{9}\selectfont
 \setlength{\tabcolsep}{2pt}
 \begin{tabular}{@{}p{1.7cm}p{6.6cm}@{}}
-\hline
-項目 & 設定 \\
 \hline
 基盤モデル & Qwen3.5-4B \\
 LoRA & $r=16$，$\alpha=128$ \\
@@ -136,17 +144,13 @@ error bars/error mark options={rotate=90,mark size=4pt,line width=1pt}]
 学習の各回について，Geminiとの差をMcNemar検定で調べた。
 提案手法は，短文条件のGeminiを3回とも有意に上回った（$p<0.001$）。
 候補一覧条件のGeminiとは，3回とも有意差がなかった（$p=0.375,\ 0.125,\ 1.000$）。
-候補を与えない条件では，提案手法の正解率が高かった。
-一方，候補を絞ったGeminiとの差は確認できなかった。
 ただし，候補一覧条件は入力条件が異なるため，同じ性能とまでは判断できなかった。
 なお，LoRAの設定は，評価画像で8条件を比べて平均正解率が最も高いものを選んだ。
-他の設定との有意差は確認できなかった。
 
 \section{現状と今後の計画}
 現在までに，41薬剤では，表裏各1枚の収集画像から実写画像を平均99.54\%で識別できた。
 学習する薬剤を100種類に増やした場合，既知の41薬剤の実写287枚での平均正解率は96.75\%であった。
-今後は，次の3点に取り組む。
-第1に，学習する薬剤を増やしても正解率を保てる学習方法を検討する。
+今後は，第1に，学習する薬剤を増やしても正解率を保てる方法と，モデルを小型にして正解率を上げる方法を検討する。
 第2に，部分画像の内容による効果と，学習量が増えた効果を分けて確かめる。
 第3に，新たに撮影した実写画像で評価し，条件選びに使っていない画像での正解率を確かめる。
 あわせて，未学習の薬剤に対する回答の保留と，複数の薬剤が写った実写画像での評価にも取り組む。
