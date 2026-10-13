@@ -104,7 +104,7 @@ W=W_0+\frac{\alpha}{r}BA
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-width=6.9cm,height=34mm,xbar,bar width=3.6mm,
+width=6.9cm,height=30mm,xbar,bar width=3.6mm,
 xmin=0,xmax=100,xtick={0,50,100},
 symbolic y coords={G2,G1,Q},ytick={Q,G1,G2},
 yticklabels={提案手法,Gemini短文,Gemini候補一覧},
@@ -130,7 +130,7 @@ error bars/error mark options={mark size=2.5pt,line width=.8pt}]
 提案手法は，短文条件のGeminiを3回とも有意に上回った。
 候補一覧条件のGeminiとは，3回とも有意差がなかった。
 ただし，候補一覧条件は入力条件が異なるため，同じ性能とまでは判断できなかった。
-なお，LoRAの設定は，評価画像で8条件を比べて平均正解率が最も高いものを選んだ。
+なお，LoRAの設定は，評価画像で比べた8条件から選んだ。
 
 \section{結論と今後の計画}
 部分画像と拡張画像による追加学習の結果，41薬剤の実写287枚を平均99.54\%で識別できた。
@@ -140,6 +140,7 @@ error bars/error mark options={mark size=2.5pt,line width=.8pt}]
 第2に，モデルを小型にして正解率を上げる方法を検討する。
 第3に，部分画像の内容による効果と，学習量が増えた効果を分けて確かめる。
 第4に，条件選びに使っていない新たな実写画像で評価する。
+第5に，学習していない薬剤には回答を保留する仕組みを評価する。
 
 {\raggedright
 \bibliographystyle{junsrt}
