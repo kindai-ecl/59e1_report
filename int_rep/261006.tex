@@ -4,7 +4,7 @@
 \usepackage{cite}
 \usepackage{etoolbox}
 \apptocmd{\thebibliography}{\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}}{}{}
-\usetikzlibrary{arrows.meta,positioning}
+\usetikzlibrary{arrows.meta,positioning,calc}
 \pgfplotsset{compat=1.18}
 \setlength{\columnsep}{8mm}\setlength{\emergencystretch}{2em}\hbadness=3500
 \setlength{\parskip}{0pt}
@@ -19,7 +19,7 @@
 \renewcommand\@biblabel[1]{#1)}
 \renewcommand\citeleft{}
 \renewcommand\citeright{)}
-\renewcommand\citepunct{,}
+\renewcommand\citepunct{,\ }
 \renewcommand\citemid{,\ }
 \makeatother
 \AtBeginDvi{\special{pdf:mapline uprml-h unicode ipaexm.ttf}\special{pdf:mapline uprml-hq unicode ipaexm.ttf}\special{pdf:mapline upgbm-h unicode ipaexg.ttf}\special{pdf:mapline upgbm-hq unicode ipaexg.ttf}\special{pdf:tounicode UTF8-UTF16}}
@@ -29,60 +29,61 @@
 \fontsize{10}{14.6}\selectfont
 \twocolumn[\noindent\hspace*{36mm}{\Large\bfseries 収集画像からの部分画像生成とLoRAによるPTP包装識別}\par
 \vspace{14.6pt}
-\noindent\hfill 電子商取引研究室　呉竹 櫂人，森山 真光\hspace{1zw}\par
+\noindent\hfill 電子商取引研究室　呉竹 櫂人\hspace{1zw}\par
 \vspace{14.6pt}]
 \section{序論}
 薬剤の取り違えは患者に重い健康被害を与えるおそれがあり，PTP包装の画像から薬剤を識別する支援手法が研究されている\cite{who2017,han2021}。
 しかし，従来研究では，1薬剤あたり表裏各72枚，計144枚の画像を撮影して学習に用いている\cite{han2021}。
-本研究の目的は，各薬剤の表裏各1枚の収集画像だけから，実写画像の薬剤名を識別することである。
+本研究では，各薬剤の表裏各1枚の収集画像を拡張して学習に用いる。
+目的は，完品や数錠に切り離したPTPシートの実写画像から薬剤名を識別することである。
 そのために，収集画像から部分画像と拡張画像を作り，視覚言語モデルをLoRAで追加学習する方法を提案する。
 
 \section{部分画像とLoRAによる薬剤名識別}
 図\ref{fig:flow}に，提案手法の学習と識別の流れを示す。
 学習では，表裏各1枚の収集画像から，シート全体と，1錠区画・2分割・4分割の部分画像を作る。
-各画像に回転12種と明るさ5種の変換を別々に施し，1枚から計17枚の拡張画像を作る。
-モデルには画像と指示文「この錠剤は何という薬ですか？薬剤名だけで答えてください。」を入力し，正解の薬剤名を出力するように学習する。
-識別時も同じ指示文を使い，薬剤名の候補は与えない。
 図\ref{fig:maintate}に，メインテート錠2.5mgの収集画像，部分画像，実写画像の例を示す。
+各画像に回転12種と明るさ5種の変換を別々に施し，1枚から計17枚の拡張画像を作る。
+モデルには，画像と指示文「この錠剤は何という薬ですか？薬剤名だけで答えてください。」を入力する。
+正解の薬剤名を出力するように学習する。
+識別時も同じ指示文を使い，薬剤名の候補は与えない。
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[x=1mm,y=0.85mm,font=\fontsize{8}{9}\selectfont,
- act/.style={draw,rounded corners=1.5mm,align=center,minimum height=5mm,inner sep=1.5pt},
- obj/.style={draw,align=center,minimum height=5mm,inner sep=1.5pt},
+\begin{tikzpicture}[x=1mm,y=1mm,font=\fontsize{8}{9}\selectfont,
+ act/.style={draw,rounded corners=1.5mm,align=center,minimum height=4.2mm,inner sep=1pt},
+ obj/.style={draw,align=center,minimum height=4.2mm,inner sep=1pt},
  arr/.style={-{Stealth[length=1.5mm]},line width=.45pt}]
-\draw[gray] (0,0) rectangle (86,-33);
-\draw[gray] (43,0)--(43,-33);
-\node at (21.5,-2.5) {学習};
-\node at (64.5,-2.5) {識別};
-\fill (21.5,-6) circle (1.2mm); \fill (64.5,-6) circle (1.2mm);
-\node[act] (a) at (21.5,-11.5) {部分画像を生成する};
-\node[act] (b) at (21.5,-18.5) {回転・明るさで拡張する};
-\node[act] (c) at (21.5,-25.5) {LoRAを学習する};
-\draw (21.5,-30.5) circle (1.5mm); \fill (21.5,-30.5) circle (.9mm);
-\node[act] (e0) at (64.5,-11.5) {実写画像を入力する};
-\node[act] (e) at (64.5,-18.5) {薬剤名を生成する};
-\node[act] (f) at (64.5,-25.5) {正解名と照合する};
-\draw (64.5,-30.5) circle (1.5mm); \fill (64.5,-30.5) circle (.9mm);
-\node[obj] (o) at (43,-25.5) {学習済み\\LoRA};
-\draw[arr] (21.5,-7.2)--(a); \draw[arr] (64.5,-7.2)--(e0);
+\draw[gray] (0,0) rectangle (86,-28.5);
+\draw[gray] (43,0)--(43,-28.5);
+\node[anchor=west] at (1.5,-3.2) {学習};
+\node[anchor=west] at (44.5,-3.2) {識別};
+\fill (21.5,-3.2) circle (1.1mm); \fill (64.5,-3.2) circle (1.1mm);
+\node[act] (a) at (21.5,-8.5) {部分画像を生成する};
+\node[act] (b) at (21.5,-15) {回転・明るさで拡張する};
+\node[act] (c) at (21.5,-21.5) {LoRAを学習する};
+\draw (21.5,-26.3) circle (1.4mm); \fill (21.5,-26.3) circle (.8mm);
+\node[act] (e0) at (64.5,-8.5) {実写画像を入力する};
+\node[act] (e) at (64.5,-15) {薬剤名を生成する};
+\node[act] (f) at (64.5,-21.5) {正解名と照合する};
+\draw (64.5,-26.3) circle (1.4mm); \fill (64.5,-26.3) circle (.8mm);
+\node[obj] (o) at (43,-21.5) {学習済み\\LoRA};
+\draw[arr] (21.5,-4.3)--(a); \draw[arr] (64.5,-4.3)--(e0);
 \draw[arr] (a)--(b); \draw[arr] (b)--(c);
 \draw[arr] (e0)--(e); \draw[arr] (e)--(f);
 \draw[arr] (c)--(o); \draw[arr] (o.north) |- (e.west);
-\draw[arr] (c)--(21.5,-29); \draw[arr] (f)--(64.5,-29);
+\draw[arr] (c)--(21.5,-24.9); \draw[arr] (f)--(64.5,-24.9);
 \end{tikzpicture}
 \caption{提案手法の学習と識別の流れ（UMLアクティビティ図）}
 \label{fig:flow}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{fig_maintate.png}
+\includegraphics[width=0.95\linewidth]{fig_maintate.png}
 \caption{収集画像から作る部分画像と実写画像の例}
 \label{fig:maintate}
 \end{figure}
 
-LoRAは，元の重み$W_0$を固定し，低ランク行列の積を更新として加える手法である\cite{hu2022}。
-学習するのは，式\eqref{eq:lora}の行列$A$と$B$だけである。
+LoRAは，元の重み$W_0$を固定し，式\eqref{eq:lora}の低ランク行列$A$，$B$だけを学習する手法である\cite{hu2022}。
 \begin{equation}\label{eq:lora}
 W=W_0+\frac{\alpha}{r}BA
 \end{equation}
@@ -90,72 +91,57 @@ W=W_0+\frac{\alpha}{r}BA
 識別結果は，表記をそろえた回答に正解の薬剤名が含まれていれば正解とし，正解率で評価する。
 
 \section{実験結果と考察}
-表\ref{tab:settings}に，実験条件を示す。
 学習には，Webで収集した41薬剤の表裏各1枚，計82枚から作った1,224枚を用いた。
-評価には，近畿大学病院薬剤部で撮影した41薬剤の実写画像287枚を用いた。
-評価画像は，学習には使わなかった。
+基盤モデルには\mbox{Qwen3.5-4B}を用い，LoRAは$r=16$，$\alpha=128$とした。
+学習率は$2\times10^{-4}$，総提示枚数は107,525枚とし，NVIDIA H100 1基，PyTorch 2.11.0，PEFT 0.19.1で学習した。
+評価には，近畿大学病院薬剤部で撮影した41薬剤の実写画像287枚を用い，学習には使わなかった。
 比較として，追加学習していないGemini 3.8 Flashを2条件で評価した。
 短文条件では提案手法と同じ指示文を与え，候補一覧条件では41薬剤の一覧から1つを選ばせた。
-\begin{table}[t]
-\centering
-\caption{実験条件}
-\label{tab:settings}
-\fontsize{8}{9}\selectfont
-\setlength{\tabcolsep}{2pt}
-\begin{tabular}{@{}p{1.7cm}p{6.6cm}@{}}
-\hline
-基盤モデル & Qwen3.5-4B \\
-LoRA & $r=16$，$\alpha=128$ \\
-学習 & 総提示107,525枚，学習率$2\times10^{-4}$，BF16 \\
-計算環境 & NVIDIA H100 1基，PyTorch 2.11.0，PEFT 0.19.1 \\
-比較モデル & Gemini 3.8 Flash（temperature 0） \\
-\hline
-\end{tabular}
-\end{table}
-図\ref{fig:accuracy}に，各条件の正解率を示す。
 提案手法は，学習の乱数を変えた3回で，287枚中286枚，287枚，284枚に正解した。
 平均正解率は99.54\%，標準偏差は0.53ポイントであった。
-Geminiは，短文条件で238枚（82.93\%），候補一覧条件で283枚（98.61\%）に正解した。
+完品29枚は3回とも全て正解し，断片258枚では257枚，258枚，255枚に正解した。
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-width=7.8cm,height=25mm,ybar,bar width=8mm,
-ymin=0,ymax=125,ytick={0,50,100},
-ylabel={正解率（\%）},
-symbolic x coords={Q,G1,G2},xtick={Q,G1,G2},
-xticklabels={提案手法,Gemini短文,Gemini候補一覧},
-enlarge x limits=.2,
+width=6.9cm,height=34mm,xbar,bar width=3.6mm,
+xmin=0,xmax=100,xtick={0,50,100},
+symbolic y coords={G2,G1,Q},ytick={Q,G1,G2},
+yticklabels={提案手法,Gemini短文,Gemini候補一覧},
+enlarge y limits=.3,
 tick label style={font=\fontsize{8}{9}\selectfont},
 label style={font=\fontsize{8}{9}\selectfont},
-axis x line*=bottom,axis y line*=left,ymajorgrids,grid style={gray!20},
-nodes near coords,point meta=y,
-nodes near coords style={font=\fontsize{8}{9}\selectfont,/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/zerofill},
-error bars/y dir=both,error bars/y explicit,
-error bars/error bar style={black,line width=1pt},
-error bars/error mark options={rotate=90,mark size=4pt,line width=1pt}]
-\addplot[fill=black!65,draw=black,bar shift=0pt] coordinates {(Q,99.5354239257) +- (0,.5322387567)};
-\addplot[fill=black!20,draw=black,bar shift=0pt] coordinates {(G1,82.9268292683) (G2,98.606271777)};
+axis x line*=bottom,axis y line*=left,xmajorgrids,grid style={gray!20},
+error bars/x dir=both,error bars/x explicit,
+error bars/error bar style={black,line width=.8pt},
+error bars/error mark options={mark size=2.5pt,line width=.8pt}]
+\addplot[fill=black!35,draw=black,bar shift=0pt] coordinates {(99.5354239257,Q) +- (.5322387567,0)};
+\addplot[fill=black!12,draw=black,bar shift=0pt] coordinates {(82.9268292683,G1) (98.606271777,G2)};
+\node[anchor=east,font=\fontsize{8}{9}\selectfont] at (axis cs:97.5,Q) {99.54};
+\node[anchor=east,font=\fontsize{8}{9}\selectfont] at (axis cs:82,G1) {82.93（$p<0.001$，3回とも）};
+\node[anchor=east,font=\fontsize{8}{9}\selectfont] at (axis cs:97.5,G2) {98.61（$p=0.375,\ 0.125,\ 1.000$）};
 \end{axis}
 \end{tikzpicture}
-\caption{実写287枚での正解率（提案手法は3回の平均，誤差棒は標準偏差）}
+\caption{実写287枚での正解率（\%）とMcNemar検定の$p$値}
 \label{fig:accuracy}
 \end{figure}
 学習の各回について，Geminiとの差をMcNemar検定で調べた。
-提案手法は，短文条件のGeminiを3回とも有意に上回った（$p<0.001$）。
-候補一覧条件のGeminiとは，3回とも有意差がなかった（$p=0.375,\ 0.125,\ 1.000$）。
+図\ref{fig:accuracy}に，各条件の正解率と$p$値を示す。
+提案手法は，短文条件のGeminiを3回とも有意に上回った。
+候補一覧条件のGeminiとは，3回とも有意差がなかった。
 ただし，候補一覧条件は入力条件が異なるため，同じ性能とまでは判断できなかった。
 なお，LoRAの設定は，評価画像で8条件を比べて平均正解率が最も高いものを選んだ。
 
-\section{現状と今後の計画}
-現在までに，41薬剤では，表裏各1枚の収集画像から実写画像を平均99.54\%で識別できた。
-学習する薬剤を100種類に増やした場合，既知の41薬剤の実写287枚での平均正解率は96.75\%であった。
-今後は，第1に，学習する薬剤を増やしても正解率を保てる方法と，モデルを小型にして正解率を上げる方法を検討する。
-第2に，部分画像の内容による効果と，学習量が増えた効果を分けて確かめる。
-第3に，新たに撮影した実写画像で評価し，条件選びに使っていない画像での正解率を確かめる。
-あわせて，未学習の薬剤に対する回答の保留と，複数の薬剤が写った実写画像での評価にも取り組む。
+\section{結論と今後の計画}
+部分画像と拡張画像による追加学習の結果，41薬剤の実写287枚を平均99.54\%で識別できた。
+完品だけでなく数錠の断片も識別でき，41薬剤については目的を達成した。
+この結果から，多数の画像を撮影しなくても，数錠になったPTPシートまで識別できる見通しを得た。
+今後は，第1に，薬剤を増やしても正解率を保つ方法を検討する。
+第2に，モデルを小型にして正解率を上げる方法を検討する。
+第3に，部分画像の内容による効果と，学習量が増えた効果を分けて確かめる。
+第4に，条件選びに使っていない新たな実写画像で評価する。
 
-{\fontsize{7}{8}\selectfont\raggedright
+{\raggedright
 \bibliographystyle{junsrt}
 \bibliography{261006}
 }
